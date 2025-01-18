@@ -14,9 +14,12 @@ export default {
         'newsbg': "url('/images/newsletter.jpeg')"
       },
       colors:{
-        'fsecondary':"#2B2D37",
         'fprimary':"#ffd602",
-        'fshade':'#E0AC60'
+        'fsecondary':"#0B0A08",
+        'fshade':'#E0AC60',
+        'faccent':'#6084E0',
+        'ftone':'#545861',
+        'ftint':'#615F54'
       },
   	}
   },
