@@ -9,8 +9,15 @@ export default {
   ],
   theme: {
   	extend: {
-  		colors: {
-  		}
+  		backgroundImage:{
+        'footerbg':"url('/images/footerbg.jpeg')",
+        'newsbg': "url('/images/newsletter.jpeg')"
+      },
+      colors:{
+        'fsecondary':"#2B2D37",
+        'fprimary':"#ffd602",
+        'fshade':'#E0AC60'
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],
