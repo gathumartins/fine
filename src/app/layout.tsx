@@ -24,12 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={raj.className}>
-        <main className="relative text-black">
+        <div className="relative text-black">
           <Header />
           <Navbar />
-          {children}
+          <main className="h-lvh">{children}</main>
           <Footer />
-        </main>
+        </div>
       </body>
     </html>
   );
