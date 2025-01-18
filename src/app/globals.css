@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    padding:0px;
+    margin:0px ;
+    box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+@layer components{
+.myCont{
+    @apply container lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] xl:max-w-[1200px] mx-auto;
+}
+.stickyActive{
+    @apply bg-fprimary z-10 -mt-[28px] sticky top-0 lg:block hidden;
+}
+.stickyN{
+    @apply bg-transparent z-10 -mt-[28px] sticky top-0 lg:block hidden;
+}
+.heroBtn{
+    @apply bg-fprimary hover:bg-fsecondary hover:text-white max-md:text-[22px] max-md:px-[15px] max-md:py-[15px] text-[28px] py-[15px] px-[20px] font-bold text-fsecondary no-underline;
+}
+.page{
+    @apply relative lg:-mt-[62px];
+}
+.mypadding{
+    @apply max-sm:py-[56px] max-md:py-[80px] py-[110px] max-sm:px-[16px];
+}
+}
