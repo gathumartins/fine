@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="bg-newsbg">
           {/* <Newsletter /> */}
         </div>
-        <section className="mypadding bg-fsecondary/90">
+        <section className="mypadding bg-fsecondary/95">
           <div className="myCont grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-4 gap-4">
             <div className="pr-5 flex-grow">
               {/* <Image src="/images/logowhite.webp" width="180" height="41" alt="Finework Kenya Limited Logo Foooter" className="mb-6" /> */}
