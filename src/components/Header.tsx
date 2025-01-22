@@ -4,10 +4,10 @@ import {
   PhoneIcon,
   ClockIcon,
   EnvelopeIcon,
-  Bars3Icon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [solid, setSolid] = useState(false);
@@ -48,7 +48,7 @@ const Header = () => {
           height="41"
           alt="Finework Kenya Limited Logo"
         />
-        <Bars3Icon className="h-10 w-8 text-white cursor-pointer" />
+        <MobileMenu/>
       </div>
     </header>
   );

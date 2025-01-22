@@ -4,10 +4,11 @@ import React from 'react'
 const page = () => {
 
   return (
-    <div className="page" >
-      <PagesHero/>
-      p
-    </div>
+    <main>
+      <header className="bg-fsecondary/80 top-0 pt-[87px] lg:-pt-[62px]">
+        <PagesHero />
+      </header>
+    </main>
   );
 }
 
