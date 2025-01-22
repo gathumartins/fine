@@ -3,11 +3,11 @@ import React from 'react'
 
 const page = () => {
   return (
-    <>
-    <PagesHero/>
-    page
-    </>
-  )
+    <div className="page">
+      <PagesHero />
+      page
+    </div>
+  );
 }
 
 export default page

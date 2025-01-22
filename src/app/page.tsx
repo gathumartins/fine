@@ -1,9 +1,5 @@
 import Image from "next/image";
 
 export default function Home() {
-  return (
-<main>
-Home page minor adjusted
-</main>
-  );
+  return <div className="page">Home page minor adjusted</div>;
 }
