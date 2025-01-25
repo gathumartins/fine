@@ -9,7 +9,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
 @layer base {
   :root {
     --radius: 0.5rem;
@@ -20,15 +19,18 @@ body {
     @apply container lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] xl:max-w-[1200px] mx-auto;
 }
 .stickyActive{
-    @apply bg-fprimary z-10 -mt-[28px] sticky top-0 lg:block hidden;
+    @apply bg-fprimary z-50 -mt-[28px] sticky top-0 lg:block hidden;
 }
 .stickyN{
-    @apply bg-transparent z-10 -mt-[28px] sticky top-0 lg:block hidden;
+    @apply bg-transparent z-50 -mt-[28px] sticky top-0 lg:block hidden;
 }
 .heroBtn{
     @apply bg-fprimary hover:bg-fsecondary hover:text-white max-md:text-[22px] max-md:px-[15px] max-md:py-[15px] text-[28px] py-[15px] px-[20px] font-bold text-fsecondary no-underline;
 }
 .page{
+    @apply relative lg:-mt-[150px];
+}
+.home{
     @apply relative lg:-mt-[62px];
 }
 .mypadding{

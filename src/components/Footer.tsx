@@ -1,16 +1,15 @@
 import Link from "next/link";
-import {
-  MapPinIcon,
-  PhoneIcon,
-  EnvelopeOpenIcon,
-} from "@heroicons/react/24/solid";
+import { FaMapMarkerAlt, FaRegEnvelope } from "react-icons/fa";
+import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 import Clients from "./Clients";
 import Newsletter from "./Newsletter";
+
+
 
 const Footer = () => {
   return (
     <>
-      {/* <Clients/> */}
+      <Clients />
       <footer className="bg-[url('/images/footerbg.webp')] bg-no-repeat bg-cover">
         <div className="bg-newsbg bg-cover bg-no-repeat bg-center">
           <Newsletter />
@@ -130,17 +129,21 @@ const Footer = () => {
                 Contact Us
               </h3>
               <div className="text-white">
-                <div className="flex items-stretch mb-2">
-                  <MapPinIcon className="w-[20px] h-[20px] mr-[20px]" />
-                  <span className="text-xl font-medium leading-6">
+                <div className="flex flex-start mb-2">
+                  <div className="w-[30px] mr-[10px] pt-3">
+                    <FaMapMarkerAlt className="w-[30px]" />
+                  </div>
+                  <p className="text-xl font-medium leading-8">
                     Enterprise Center Building, Enterprise Road, Industrial
                     Area, Nairobi Kenya.
-                  </span>
+                  </p>
                 </div>
 
-                <div className="flex items-stretch mb-[8px]">
-                  <PhoneIcon className="w-[20px] h-[20px] mr-[20px]" />
-                  <span className="text-xl font-medium grid grid-cols-1 leading-5">
+                <div className="flex flex-start mb-[8px]">
+                  <div className="w-[30px] mr-[10px] pt-3 text-center">
+                    <HiMiniDevicePhoneMobile className="w-[20px]" />
+                  </div>
+                  <span className="text-xl font-medium grid grid-cols-1 leading-6">
                     <Link
                       href="tel:+254754006060"
                       className="text-white hover:text-fprimary no-underline"
@@ -156,8 +159,10 @@ const Footer = () => {
                   </span>
                 </div>
 
-                <div className="flex items-stretch mb-[8px] leading-1">
-                  <EnvelopeOpenIcon className="w-[20px] h-[20px] mr-[20px]" />
+                <div className="flex flex-start mb-[8px] leading-1">
+                  <div className="w-[30px] mr-[10px] pt-1 text-center">
+                    <FaRegEnvelope className="w-[20px]" />
+                  </div>
                   <span className="text-xl font-medium grid grid-cols-1">
                     <Link
                       href="mailto:info@finework.co.ke"
@@ -194,8 +199,8 @@ const Footer = () => {
             </ul>
             <div className="flex-grow text-center lg:text-right">
               <p className="text-white text-lg font-medium inline-block">
-                &copy; Finework Kenya {new Date().getFullYear()} ALL Rights
-                Reserved
+                &copy; {new Date().getFullYear()} Fine Work Kenya Limited. ALL
+                Rights Reserved
               </p>
             </div>
           </div>

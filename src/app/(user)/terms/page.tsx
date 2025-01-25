@@ -3,10 +3,12 @@ import React from "react";
 
 const page = () => {
   return (
-    <article className="lg:relative">
-      <header className="bg-fsecondary/80 pt-[87px] lg:absolute w-full lg:-mt-[150px]">
-        <PagesHero />
-      </header>
+    <article className="page">
+      <section className="">
+        <header className="bg-fsecondary/80 pt-[87px] w-full">
+          <PagesHero />
+        </header>
+      </section>
     </article>
   );
 };

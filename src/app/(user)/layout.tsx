@@ -11,7 +11,7 @@ export default function MainLayout({
     <>
       <Header />
       <Navbar />
-      <main className="h-lvh">{children}</main>
+      <main className="min-h-lvh">{children}</main>
       <Footer />
     </>
   );

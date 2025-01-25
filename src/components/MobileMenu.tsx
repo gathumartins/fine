@@ -25,8 +25,8 @@ function MobileMenu() {
         <SheetTrigger>
           <Bars3Icon className="h-10 w-8 text-white cursor-pointer" />
         </SheetTrigger>
-        <SheetContent className="lg:hidden [&_svg]:w-10 bg-ftone border-ftone [&_svg]:text-white [&_svg]:hover:text-fprimary [&_svg]:h-8 [&_button]:top-3 [&_button]:left-4 [&_button]:w-[40px] p-0 [&_button]:ring-0 [&_button]:ring-offset-0 [&_button]:shadow-none [&_button]:focus:ring-0 [&_button]:focus:ring-offset-0 [&_button]:focus:shadow-none">
-          <SheetHeader className="shadow-sm shadow-ftint px-4 pb-4">
+        <SheetContent className="lg:hidden [&_svg]:w-10 bg-ftone [&_svg]:text-white [&_svg]:hover:text-fprimary [&_svg]:h-8 [&_button]:top-3 [&_button]:left-4 [&_button]:w-[40px] p-0 [&_button]:ring-0 [&_button]:ring-offset-0 [&_button]:shadow-none [&_button]:focus:ring-0 [&_button]:focus:ring-offset-0 [&_button]:focus:shadow-none border-fprimary border-l-1">
+          <SheetHeader className="bg-fsecondary px-4 pb-4 h-[60px] rounded-bl-large shadow-lg shadow-fprimary">
             <SheetTitle className="sr-only">
               Are you absolutely sure?
             </SheetTitle>
@@ -38,12 +38,12 @@ function MobileMenu() {
               </div>
             </div>
           </SheetHeader>
-          <nav className="px-4 pb-4">
-            <ul className="flex flex-col text-center place-items-center font-bold mb-0">
+          <nav className="px-4 py-8">
+            <ul className="flex flex-col justify-start gap-10 text-center font-bold mb-0">
               <li>
                 <Link
                   href="/"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   Home
                 </Link>
@@ -51,7 +51,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/about"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   About
                 </Link>
@@ -59,7 +59,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/services"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   Services
                 </Link>
@@ -67,7 +67,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/projects"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   Projects
                 </Link>
@@ -75,7 +75,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/products"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   Products
                 </Link>
@@ -83,7 +83,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade no-underline"
+                  className="text-xl text-white hover:text-fprimary no-underline"
                 >
                   Blog
                 </Link>
@@ -91,7 +91,7 @@ function MobileMenu() {
               <li>
                 <Link
                   href="/contacts"
-                  className="text-xl leading-[90px] text-fsecondary hover:text-fshade
+                  className="text-xl text-white hover:text-fprimary
                    no-underline"
                 >
                   Contacts
@@ -99,30 +99,32 @@ function MobileMenu() {
               </li>
             </ul>
           </nav>
-          <div className="px-4 pb-4 fixed bottom-0">
-            <ul className="flex flex-row gap-6 justify-between">
-              <li className="flex flex-start gap-2">
-                <span className="text-base text-fshade">
-                  <Link
-                    href="mailto:info@finework.co.ke"
-                    className="hover:text-fshade no-underline text-white"
-                  >
-                    info@finework.co.ke
-                  </Link>
-                </span>
-              </li>
-              <li className="flex flex-start gap-2">
-                <span className="text-base text-fshade">
-                  <Link
-                    href="tel:+254736709540"
-                    className="hover:text-fshade no-underline text-white"
-                  >
-                    +254 736 709 540
-                  </Link>
-                </span>
-              </li>
-            </ul>
-          </div>
+          <SheetFooter className="fixed bottom-0 border-t-1 border-fprimary border-r-1 rounded-tr-large bg-fsecondary">
+            <div className="px-4 py-4">
+              <ul className="flex flex-row gap-6 justify-between">
+                <li className="flex flex-start gap-2">
+                  <span className="text-base text-fshade">
+                    <Link
+                      href="mailto:info@finework.co.ke"
+                      className="hover:text-fshade no-underline text-white"
+                    >
+                      info@finework.co.ke
+                    </Link>
+                  </span>
+                </li>
+                <li className="flex flex-start gap-2">
+                  <span className="text-base text-fshade">
+                    <Link
+                      href="tel:+254736709540"
+                      className="hover:text-fshade no-underline text-white"
+                    >
+                      +254 736 709 540
+                    </Link>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
     </div>
