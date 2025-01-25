@@ -12,27 +12,27 @@ const Footer = () => {
     <>
       {/* <Clients/> */}
       <footer className="bg-[url('/images/footerbg.webp')] bg-no-repeat bg-cover">
-        <div className="bg-newsbg">
-          {/* <Newsletter /> */}
+        <div className="bg-newsbg bg-cover bg-no-repeat bg-center">
+          <Newsletter />
         </div>
-        <section className="mypadding bg-fsecondary/95">
-          <div className="myCont grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-4 gap-4">
-            <div className="pr-5 flex-grow">
+        <section className="footerpadding bg-fsecondary/50">
+          <div className="myCont grid max-sm:grid-cols-2 max-lg:grid-cols-2 grid-cols-4 gap-4">
+            <div className="pr-5 max-sm:pr-0 flex-grow max-sm:col-span-2">
               {/* <Image src="/images/logowhite.webp" width="180" height="41" alt="Finework Kenya Limited Logo Foooter" className="mb-6" /> */}
-              <h3 className="font-bold text-white mb-[20px] text-xl">
+              <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Our Purpose
               </h3>
-              <p className="text-xl font-medium mb-[20px] text-white">
+              <p className="text-xl font-medium mb-[20px] text-white leading-9">
                 Commissioning and servicing of all types of fire
                 equipment/systems. Walk through and hand held detectors Electric
                 fencing /razor wire
               </p>
             </div>
             <div className="pr-[20px]">
-              <h3 className="font-bold text-white mb-[20px] text-xl">
+              <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Quick Links
               </h3>
-              <ul className="pl-0 text-xl font-medium">
+              <ul className="pl-0 text-xl font-medium leading-9">
                 <li>
                   <Link
                     href="/about"
@@ -76,7 +76,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="pr-[20px]">
-              <h3 className="font-bold text-white mb-[20px] text-xl">
+              <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Follow Us
               </h3>
               <ul className="leading-9 pl-0 font-medium text-xl">
@@ -115,15 +115,23 @@ const Footer = () => {
                     Instagram
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/projects"
+                    className="text-white hover:text-fprimary no-underline"
+                  >
+                    YouTube
+                  </Link>
+                </li>
               </ul>
             </div>
-            <div className="pr-[20px]">
-              <h3 className="font-bold text-white mb-[20px] text-xl">
+            <div className="pr-[20px] max-sm:pr-0 max-sm:col-span-2">
+              <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Contact Us
               </h3>
               <div className="text-white">
                 <div className="flex items-stretch mb-2">
-                  <MapPinIcon className="w-[40px] h-[40px] mr-[20px]" />
+                  <MapPinIcon className="w-[20px] h-[20px] mr-[20px]" />
                   <span className="text-xl font-medium leading-6">
                     Enterprise Center Building, Enterprise Road, Industrial
                     Area, Nairobi Kenya.
@@ -164,11 +172,32 @@ const Footer = () => {
             </div>
           </div>
         </section>
-        <div className="bg-fsecondary pt-[28px] pb-[10px] max-sm:px-[16px]">
-          <div className="myCont text-center">
-            <p className="text-white text-lg font-medium">
-              &copy; Finework Kenya {new Date().getFullYear()} ALL Rights Reserved
-            </p>
+        <div className="bg-fsecondary pt-[28px] pb-[15px] max-sm:px-[16px]">
+          <div className="myCont flex flex-col lg:flex-row gap-2 justify-center lg:justify-between">
+            <ul className="flex justify-center lg:justify-start gap-5 text-lg font-medium">
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-white hover:text-fprimary no-underline"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-white hover:text-fprimary no-underline"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+            <div className="flex-grow text-center lg:text-right">
+              <p className="text-white text-lg font-medium inline-block">
+                &copy; Finework Kenya {new Date().getFullYear()} ALL Rights
+                Reserved
+              </p>
+            </div>
           </div>
         </div>
       </footer>

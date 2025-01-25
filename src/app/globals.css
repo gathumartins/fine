@@ -34,4 +34,7 @@ body {
 .mypadding{
     @apply max-sm:py-[56px] max-md:py-[80px] py-[110px] max-sm:px-[16px];
 }
+.footerpadding{
+    @apply max-sm:py-[50px] max-md:py-[70px] py-[90px] max-sm:px-[16px];
+}
 }

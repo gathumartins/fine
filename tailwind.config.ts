@@ -11,7 +11,7 @@ export default {
   	extend: {
   		backgroundImage:{
         'footerbg':"url('/images/footerbg.jpeg')",
-        'newsbg': "url('/images/newsletter.jpeg')"
+        'newsbg': "url('/images/newsletter.webp')"
       },
       colors:{
         'fprimary':"#ffd602",
