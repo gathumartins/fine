@@ -12,7 +12,7 @@ import MobileMenu from "./MobileMenu";
 const Header = () => {
   const [solid, setSolid] = useState(false);
   return (
-    <header className="bg-fsecondary lg:py-[40px] max-sm:px-[16px] max-lg:fixed max-lg:z-30 w-full">
+    <header className="bg-fsecondary lg:py-[40px] max-sm:px-[16px] max-lg:fixed w-full lg:relative z-10">
       <div className="myCont grid-cols-3 text-white lg:grid hidden text-base font-medium">
         <div className="flex flex-start gap-2">
           <PhoneIcon className="h-6 w-6" />
