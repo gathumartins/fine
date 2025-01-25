@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Rajdhani } from "next/font/google";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { Providers } from "@/lib/providers";
 
 const raj = Rajdhani({
   subsets: ["latin"],
@@ -25,10 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={raj.className}>
         <div className="relative text-black">
-          <Header />
-          <Navbar />
-          <main className="h-lvh">{children}</main>
-          <Footer />
+            <Providers>{children}</Providers>
         </div>
       </body>
     </html>
