@@ -4,6 +4,10 @@ import Image from 'next/image';
 function Proposition() {
   return (
     <section className="bg-white py-[60px] px-[16px]">
+      <header className="myCont sub title mb-10 text-center">
+        <h2 className="leading-none !mb-0 !text-fsecondary">Proposition</h2>
+        <h3 className="leading-none !text-ftone">Why Choose Fine Work Kenya</h3>
+      </header>
       <div className="myCont flex flex-col gap-6 lg:flex-row-reverse justify-between">
         <div className="lg:w-1/2 w-full">
           <div className="relative w-full h-full min-h-[550px] max-w-[570px] mx-auto">
