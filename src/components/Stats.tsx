@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 function Stats() {
   return (
-    <div className="w-full md:w-1/2 grid sm:grid-cols-2 gap-5">
+    <div className="w-full lg:w-1/2 grid sm:grid-cols-2 gap-5">
       {[1, 2, 3, 4].map((item: any, index: number) => (
         <div
           className="rounded hover:bg-fshade sm:first:mt-10 bg-white border-1 sm:last:mt-0 md:last:-mt-10 border-fshade sm:h-[180px] md:h-[210px] xl:h-[180px] [&_h4]:hover:text-fsecondary p-[20px] text-center [&_h5]:hover:text-fsecondary flex flex-col place-items-center"

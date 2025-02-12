@@ -49,7 +49,7 @@ body {
     @apply  [&_h5]:font-extrabold [&_h5]:text-xl lg:[&_h5]:text-[28px] md:[&_h5]:text-2xl leading-8;
 }
 .body{
-    @apply [&_p]:mb-4 lg:[&_p]:text-xl [&_p]:font-medium text-fsecondary leading-7;
+    @apply [&_p]:mb-4 [&_p]:text-xl [&_p]:font-medium text-fsecondary leading-7;
 }
 .title{
     @apply [&_h2]:text-fsecondary [&_h2]:mb-5 [&_h2]:text-[40px] [&_h2]:font-semibold leading-10;

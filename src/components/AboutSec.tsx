@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link';
 
 function AboutSec() {
   return (
-    <div className="md:w-1/2 body sub title">
+    <div className="lg:w-1/2 body sub title">
       <h3>Since 2017</h3>
       <h2>Who We Are When It Comes to Serving You</h2>
       <div>
@@ -14,12 +15,10 @@ function AboutSec() {
           repellat inventore. Officiis quibusdam, odit dolorem eaque eius
           exercitationem nulla soluta?
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, sit iusto
-          quia amet quisquam aliquam dicta voluptatibus vel nostrum nobis sequi
-          magnam dolores quis voluptatem, provident quasi explicabo nam iste?
-        </p>
       </div>
+      <Link href="/about" className="heroBtn inline-block mt-4">
+        Who We Are
+      </Link>
     </div>
   );
 }
