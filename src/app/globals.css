@@ -39,4 +39,19 @@ body {
 .footerpadding{
     @apply max-sm:py-[50px] max-md:py-[70px] py-[90px] max-sm:px-[16px];
 }
+.sub{
+    @apply [&_h3]:text-ftone [&_h3]:font-normal [&_h3]:text-2xl lg:[&_h3]:text-4xl md:[&_h3]:text-3xl leading-8;
+}
+.stats{
+    @apply  [&_h4]:font-extrabold [&_h4]:text-2xl lg:[&_h4]:text-4xl md:[&_h4]:text-3xl leading-8;
+}
+.statsub{
+    @apply  [&_h5]:font-extrabold [&_h5]:text-xl lg:[&_h5]:text-[28px] md:[&_h5]:text-2xl leading-8;
+}
+.body{
+    @apply [&_p]:mb-4 lg:[&_p]:text-xl [&_p]:font-medium text-fsecondary leading-7;
+}
+.title{
+    @apply [&_h2]:text-fsecondary [&_h2]:mb-5 [&_h2]:text-[40px] [&_h2]:font-semibold leading-10;
+}
 }
