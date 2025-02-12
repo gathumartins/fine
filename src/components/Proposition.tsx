@@ -4,24 +4,22 @@ import Image from 'next/image';
 function Proposition() {
   return (
     <section className="bg-white py-[60px] px-[16px]">
-      <div className="myCont flex flex-col lg:flex-row-reverse justify-between place-items-center">
-        <div className="lg:w-1/2 w-full relative">
-          <div className="">
+      <div className="myCont flex flex-col gap-6 lg:flex-row-reverse justify-between">
+        <div className="lg:w-1/2 w-full">
+          <div className="relative w-full h-full min-h-[550px] max-w-[570px] mx-auto">
             <Image
               src="/images/imgone.webp"
               alt="value proposition image"
               width={338}
               height={367}
-              className="top-0 left-0"
+              className="top-0 left-0 absolute shadow-xl z-10"
             />
-          </div>
-          <div className="">
             <Image
               src="/images/imgtwo.webp"
               alt="value proposition image"
               width={301}
               height={372}
-              className="bottom-0 right-0"
+              className="bottom-0 right-0 absolute shadow-xl z-0"
             />
           </div>
         </div>
