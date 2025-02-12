@@ -10,14 +10,15 @@ import {
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 function Testimonials() {
   return (
     <section className="py-[60px] px-[16px] bg-fshade/50">
+      <header className="myCont sub title mb-5">
+        <h2 className="leading-none !mb-0">Testimonials</h2>
+        <h3 className="leading-none">What clients say</h3>
+      </header>
       <div className="myCont ">
         <Carousel opts={{ align: "start", loop: true }}>
           <CarouselContent className="flex items-stretch">
