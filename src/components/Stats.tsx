@@ -11,7 +11,7 @@ function Stats() {
           key={index}
         >
           <div className="flex flex-col justify-center place-items-center flex-grow stats statsub">
-            <h4 className="text-iNeutral font-avenirBlack text-3xl">
+            <h4 className="text-fsecondary text-3xl">
               <CountUp
                 start={0}
                 end={100}
@@ -28,7 +28,7 @@ function Stats() {
                 )}
               </CountUp>
             </h4>
-            <h5 className="text-xl font-avenirBlack text-iSecondary">
+            <h5 className="text-xl font-avenirBlack text-ftone">
               Projects
             </h5>
           </div>

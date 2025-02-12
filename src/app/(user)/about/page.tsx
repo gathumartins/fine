@@ -1,4 +1,6 @@
 import AboutSec from '@/components/AboutSec';
+import CertsAwards from '@/components/CertsAwards';
+import CoreStatements from '@/components/CoreStatements';
 import PagesHero from '@/components/PagesHero'
 import Stats from '@/components/Stats';
 import React from 'react'
@@ -18,6 +20,8 @@ const page = () => {
           <Stats />
         </div>
       </section>
+      <CertsAwards/>
+      <CoreStatements/>
     </article>
   );
 }
