@@ -44,8 +44,8 @@ function Testimonials() {
             ))}
           </CarouselContent>
           <div className="">
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible"/>
+            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible"/>
           </div>
         </Carousel>
       </div>
