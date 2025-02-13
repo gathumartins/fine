@@ -20,7 +20,7 @@ const page = () => {
           <Stats />
         </div>
       </section>
-      {/* <CertsAwards/> */}
+      <CertsAwards/>
       <CoreStatements/>
     </article>
   );
