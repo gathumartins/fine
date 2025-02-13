@@ -25,7 +25,7 @@ function MobileMenu() {
         <SheetTrigger>
           <Bars3Icon className="h-10 w-8 text-white cursor-pointer" />
         </SheetTrigger>
-        <SheetContent className="lg:hidden [&_svg]:w-10 bg-ftone [&_svg]:text-white [&_svg]:hover:text-fprimary [&_svg]:h-8 [&_button]:top-3 [&_button]:left-4 [&_button]:w-[40px] p-0 [&_button]:ring-0 [&_button]:ring-offset-0 [&_button]:shadow-none [&_button]:focus:ring-0 [&_button]:focus:ring-offset-0 [&_button]:focus:shadow-none border-fprimary border-l-1">
+        <SheetContent className="max-sm:w-full lg:hidden [&_svg]:w-10 bg-ftone [&_svg]:text-white [&_svg]:hover:text-fprimary [&_svg]:h-8 [&_button]:top-3 [&_button]:left-4 [&_button]:w-[40px] p-0 [&_button]:ring-0 [&_button]:ring-offset-0 [&_button]:shadow-none [&_button]:focus:ring-0 [&_button]:focus:ring-offset-0 [&_button]:focus:shadow-none border-fprimary border-l-1">
           <SheetHeader className="bg-fsecondary px-4 pb-4 h-[60px] rounded-bl-large shadow-lg shadow-fprimary">
             <SheetTitle className="sr-only">
               Are you absolutely sure?
