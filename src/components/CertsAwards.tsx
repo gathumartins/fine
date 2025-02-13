@@ -29,10 +29,8 @@ function CertsAwards() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="">
-            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible" />
-            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible" />
-          </div>
+            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center" />
+            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center" />
         </Carousel>
       </div>
     </section>

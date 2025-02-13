@@ -19,12 +19,12 @@ function Testimonials() {
         <h2 className="leading-none !mb-0">Testimonials</h2>
         <h3 className="leading-none">What clients say</h3>
       </header>
-      <div className="myCont ">
+      <div className="myCont">
         <Carousel opts={{ align: "start", loop: true }}>
           <CarouselContent className="flex items-stretch">
             {[1, 2, 3, 4, 5, 6].map((item: any, index: number) => (
               <CarouselItem
-                className="basis-1/2 md:basis-1/3 pl-2 md:pl-4 shadow-lg"
+                className="sm:basis-1/2 md:basis-1/3 pl-2 md:pl-4 shadow-lg"
                 key={index}
               >
                 <Card className="pt-[20px] bg-white flex flex-col justify-between h-full rounded-tr-3xl rounded-tl-none rounded-br-none rounded-bl-3xl">
@@ -43,10 +43,8 @@ function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="">
-            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible"/>
-            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary invisible sm:visible"/>
-          </div>
+            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center"/>
+            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center"/>
         </Carousel>
       </div>
     </section>
