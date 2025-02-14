@@ -1,3 +1,4 @@
+import MyPagination from '@/components/MyPagination';
 import PagesHero from '@/components/PagesHero'
 import React from 'react'
 
@@ -9,11 +10,7 @@ const page = () => {
           <PagesHero />
         </header>
       </section>
-      <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
-        <div className="myCont">
-
-        </div>
-      </section>
+      <MyPagination/>
     </article>
   );
 }
