@@ -14,19 +14,19 @@ function CoreStatements() {
             <TabsList className="flex max-sm:min-h-[180px] flex-col sm:flex-row w-full sm:justify-evenly gap-1 sm:gap-5 border-b-1 border-b-fprimary rounded-none px-0 bg-transparent">
               <TabsTrigger
                 value="mission"
-                className="text-xl w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
+                className="text-xl font-semibold w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
               >
                 Fine Work Mission
               </TabsTrigger>
               <TabsTrigger
                 value="vision"
-                className="text-xl w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
+                className="text-xl font-semibold w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
               >
                 Fine Work Vision
               </TabsTrigger>
               <TabsTrigger
                 value="values"
-                className="text-xl w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
+                className="text-xl font-semibold w-full sm:w-auto mb-0 sub text-fsecondary max-sm:bg-fprimary data-[state=active]:bg-fshade sm:data-[state=active]:bg-transparent data-[state=active]:border-b-fprimary sm:border-b-transparent flex-grow sm:border-b-4 sm:rounded-none data-[state=active]:text-fsecondary sm:data-[state=active]:text-fsecondary max-sm:py-2 sm:text-fsecondary"
               >
                 Fine Work Values
               </TabsTrigger>

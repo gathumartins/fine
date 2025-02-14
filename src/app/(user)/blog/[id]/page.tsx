@@ -1,5 +1,5 @@
-import Categories from '@/components/Categories';
 import PagesHero from '@/components/PagesHero';
+import RelatedPosts from '@/components/RelatedPosts';
 import Search from '@/components/Search';
 import Tags from '@/components/Tags';
 import React from 'react'
@@ -17,7 +17,7 @@ function page() {
           <main className="flex-grow basis-1 lg:basis-2/3">Main</main>
           <aside className="flex flex-col gap-12 basis-1 lg:basis-1/3">
             <Search/>
-            <Categories/>
+            <RelatedPosts/>
             <Tags/>
           </aside>
         </div>
