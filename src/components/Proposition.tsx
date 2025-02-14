@@ -16,14 +16,14 @@ function Proposition() {
               alt="value proposition image"
               width={338}
               height={367}
-              className="top-0 left-0 absolute shadow-2xl z-10 max-sm:max-w-3/4"
+              className="top-0 left-0 absolute shadow-2xl z-10 max-[425px]:w-[90%] sm:max-w-3/4"
             />
             <Image
               src="/images/imgtwo.webp"
               alt="value proposition image"
               width={301}
               height={372}
-              className="bottom-0 right-0 absolute shadow-2xl z-0 max-sm:max-w-3/4"
+              className="bottom-0 right-0 absolute shadow-2xl z-0 max-[425px]:w-[90%]  sm:max-w-3/4"
             />
           </div>
         </div>
