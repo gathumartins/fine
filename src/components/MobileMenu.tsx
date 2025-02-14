@@ -19,9 +19,10 @@ import {
 } from "@heroicons/react/24/outline";
 
 function MobileMenu() {
+   const [open, setOpen] = useState(false);
   return (
     <div>
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Bars3Icon className="h-10 w-8 text-white cursor-pointer" />
         </SheetTrigger>
@@ -44,6 +45,7 @@ function MobileMenu() {
                 <Link
                   href="/"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Home
                 </Link>
@@ -52,6 +54,7 @@ function MobileMenu() {
                 <Link
                   href="/about"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   About
                 </Link>
@@ -60,6 +63,7 @@ function MobileMenu() {
                 <Link
                   href="/services"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Services
                 </Link>
@@ -68,6 +72,7 @@ function MobileMenu() {
                 <Link
                   href="/projects"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Projects
                 </Link>
@@ -76,6 +81,7 @@ function MobileMenu() {
                 <Link
                   href="/products"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Products
                 </Link>
@@ -84,6 +90,7 @@ function MobileMenu() {
                 <Link
                   href="/blog"
                   className="text-xl text-white hover:text-fprimary no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Blog
                 </Link>
@@ -93,6 +100,7 @@ function MobileMenu() {
                   href="/contacts"
                   className="text-xl text-white hover:text-fprimary
                    no-underline"
+                  onClick={() => setOpen(false)}
                 >
                   Contacts
                 </Link>
@@ -107,6 +115,7 @@ function MobileMenu() {
                     <Link
                       href="mailto:info@finework.co.ke"
                       className="hover:text-fshade no-underline text-white"
+                      onClick={() => setOpen(false)}
                     >
                       info@finework.co.ke
                     </Link>
@@ -117,6 +126,7 @@ function MobileMenu() {
                     <Link
                       href="tel:+254736709540"
                       className="hover:text-fshade no-underline text-white"
+                      onClick={() => setOpen(false)}
                     >
                       +254 736 709 540
                     </Link>
