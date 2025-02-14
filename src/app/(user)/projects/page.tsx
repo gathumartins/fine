@@ -3,6 +3,9 @@ import PagesHero from '@/components/PagesHero'
 import React from 'react'
 
 const page = () => {
+  let projects = [1, 2, 3, 4, 5, 6, 7];
+  const itemsPerPage = 6;
+  const comp = "project";
   return (
     <article className="page">
       <section className="">
@@ -10,7 +13,7 @@ const page = () => {
           <PagesHero />
         </header>
       </section>
-      <MyPagination/>
+      <MyPagination items={projects} ipp={itemsPerPage} comp={comp} />
     </article>
   );
 }
