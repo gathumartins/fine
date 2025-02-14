@@ -1,4 +1,7 @@
+import Categories from '@/components/Categories';
 import PagesHero from '@/components/PagesHero'
+import Search from '@/components/Search';
+import Tags from '@/components/Tags';
 import React from 'react'
 
 const page = () => {
@@ -8,6 +11,11 @@ const page = () => {
         <header className="bg-fsecondary/80 pt-[87px] w-full">
           <PagesHero />
         </header>
+      </section>
+      <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
+        <div className="myCont">
+        
+        </div>
       </section>
     </article>
   );

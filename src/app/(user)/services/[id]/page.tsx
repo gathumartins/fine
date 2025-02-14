@@ -13,8 +13,8 @@ function page() {
       </section>
       <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
         <div className="myCont flex flex-col lg:flex-row gap-7">
-          <main className="flex-grow">Main</main>
-          <aside className="flex flex-col gap-12 w-full lg:w-[300px]">
+          <main className="flex-grow  basis-1 lg:basis-2/3">Main</main>
+          <aside className="flex flex-col gap-12 basis-1 lg:basis-1/3">
             <OtherServices />
             <Download />
           </aside>
