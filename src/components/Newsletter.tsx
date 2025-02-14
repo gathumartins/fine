@@ -55,7 +55,7 @@ const Newsletter = () => {
                 disabled={state === "Loading"}
                 onClick={subscribe}
                 type="submit"
-                className="p-[20px] text-xl bg-transparent hover:bg-fsecondary text-fsecondary hover:text-white font-bold border-[1px] border-solid border-fsecondary"
+                className="p-[20px] text-xl bg-transparent max-sm:border-t-0 hover:bg-fsecondary text-fsecondary hover:text-white font-bold border-[1px] border-solid border-fsecondary"
               >
                 Subscribe
               </button>
