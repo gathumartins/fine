@@ -9,16 +9,22 @@ function MyPagination() {
   return (
     <>
       <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
-        <div className="myCont"></div>
+        <div className="myCont min-h-[200px]"></div>
       </section>
-      <footer className="pb-14 mt-5">
+      <footer className="my-5">
         <div className="myCont flex justify-center">
           <Pagination
             loop
             showControls
-            color="success"
             initialPage={1}
             total={5}
+            className="gap-4  [&_li]:rounded-full"
+            classNames={{
+              prev: "bg-fsecondary text-xl font-bold border-fprimary text-fprimary !hover:bg-fprimary hover:text-fsecondary",
+              next: "bg-fsecondary text-xl font-bold border-fprimary text-fprimary !hover:bg-fprimary hover:text-fsecondary",
+              cursor:
+                "bg-fprimary text-fsecondary hover:bg-fsecondary text-fsecondary rounded-full px-3 py-1",
+            }}
           />
         </div>
       </footer>
