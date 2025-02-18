@@ -20,13 +20,13 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
       <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
         <div className="myCont min-h-[200px] grid grid-cols-1 sm:grid-cols-2 gap-8 lg:grid-cols-3">
           {comp == "service" &&
-            currentItems.map((item: any) => <ServiceCard/>)}
+            currentItems.map((item: any, index: number) => <ServiceCard key={index}/>)}
           {comp == "product" &&
-            currentItems.map((item: any) => <ProductCard/>)}
+            currentItems.map((item: any, index: number) => <ProductCard key={index}/>)}
           {comp == "project" &&
-            currentItems.map((item: any) => <ProjectCard/>)}
+            currentItems.map((item: any, index: number) => <ProjectCard key={index}/>)}
           {comp == "blog" &&
-            currentItems.map((item: any) => <BlogCard/>)}
+            currentItems.map((item: any, index: number) => <BlogCard key={index}/>)}
         </div>
       </section>
       <footer className="my-5">

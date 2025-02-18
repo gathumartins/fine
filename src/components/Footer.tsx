@@ -6,13 +6,14 @@ import Newsletter from "./Newsletter";
 
 
 
-const Footer = () => {
+const Footer = ({footer, news, quick, clients}:any) => {
+  // console.log(footer)
   return (
     <>
-      <Clients />
+      <Clients clients={clients} />
       <footer className="bg-[url('/images/footerbg.webp')] bg-no-repeat bg-cover">
         <div className="bg-newsbg bg-cover bg-no-repeat bg-center">
-          <Newsletter />
+          <Newsletter news={news} />
         </div>
         <section className="footerpadding bg-fsecondary/50">
           <div className="myCont grid max-sm:grid-cols-2 max-lg:grid-cols-2 grid-cols-4 gap-4">
@@ -21,57 +22,28 @@ const Footer = () => {
               <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Our Purpose
               </h3>
-              <p className="text-xl font-medium mb-[20px] text-white leading-9">
-                Commissioning and servicing of all types of fire
-                equipment/systems. Walk through and hand held detectors Electric
-                fencing /razor wire
-              </p>
+              <div
+                className="text-xl font-medium mb-[20px] text-white leading-9"
+                dangerouslySetInnerHTML={{ __html: footer.purpose }}
+              ></div>
             </div>
             <div className="pr-[20px]">
               <h3 className="font-bold text-fshade mb-[20px] text-xl">
                 Quick Links
               </h3>
               <ul className="pl-0 text-xl font-medium leading-9">
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/projects"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contacts"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Contacts
-                  </Link>
-                </li>
+                {quick.map((menu: any) => (
+                  <li key={menu.node.id}>
+                    {menu.node.uri !== null && (
+                      <Link
+                        href={`${menu.node.uri}`}
+                        className="text-white hover:text-fprimary no-underline"
+                      >
+                        {menu.node.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="pr-[20px]">
@@ -79,49 +51,20 @@ const Footer = () => {
                 Follow Us
               </h3>
               <ul className="leading-9 pl-0 font-medium text-xl">
-                <li>
-                  <Link
-                    href="https://www.twitter.com/FineworkKenya"
-                    target="_blank"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Space X
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.linkedin.com/in/fineworkkenya"
-                    target="_blank"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.facebook.com/fineworkkenya"
-                    target="_blank"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/projects"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/projects"
-                    className="text-white hover:text-fprimary no-underline"
-                  >
-                    YouTube
-                  </Link>
-                </li>
+                {footer.socials.map((social: any, index: number) => (
+                  <li>
+                    {social.social.link !== null && (
+                      <Link
+                        href={`${social.social.link}`}
+                        target="_blank"
+                        className="text-white hover:text-fprimary no-underline"
+                        key={index}
+                      >
+                        {social.social.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="pr-[20px] max-sm:pr-0 max-sm:col-span-2">
@@ -134,28 +77,24 @@ const Footer = () => {
                     <FaMapMarkerAlt className="w-[30px]" />
                   </div>
                   <p className="text-xl font-medium leading-8">
-                    Enterprise Center Building, Enterprise Road, Industrial
-                    Area, Nairobi Kenya.
+                    {footer.contacts.location}
                   </p>
                 </div>
 
-                <div className="flex flex-start mb-[8px]">
-                  <div className="w-[30px] mr-[10px] pt-3 text-center">
+                <div className="flex flex-start place-items-center mb-[8px]">
+                  <div className="w-[30px] mr-[10px] text-center">
                     <HiMiniDevicePhoneMobile className="w-[20px]" />
                   </div>
                   <span className="text-xl font-medium grid grid-cols-1 leading-6">
-                    <Link
-                      href="tel:+254754006060"
-                      className="text-white hover:text-fprimary no-underline"
-                    >
-                      +254 754 006 060
-                    </Link>
-                    <Link
-                      href="tel:+254736709540"
-                      className="text-white hover:text-fprimary no-underline"
-                    >
-                      +254 736 709 540
-                    </Link>
+                    {footer.contacts.phone.map((phone: any, index: number) => (
+                      <Link
+                        href={`tel:+${phone.number}`}
+                        className="text-white hover:text-fprimary no-underline"
+                        key={index}
+                      >
+                        {`+${phone.number}`}
+                      </Link>
+                    ))}
                   </span>
                 </div>
 
@@ -164,12 +103,15 @@ const Footer = () => {
                     <FaRegEnvelope className="w-[20px]" />
                   </div>
                   <span className="text-xl font-medium grid grid-cols-1">
-                    <Link
-                      href="mailto:info@finework.co.ke"
-                      className="text-white hover:text-fprimary no-underline"
-                    >
-                      info@finework.co.ke
-                    </Link>
+                    {footer.contacts.email.map((email: any, index: number) => (
+                      <Link
+                        href={`mailto:${email.address}`}
+                        className="text-white hover:text-fprimary no-underline"
+                        key={index}
+                      >
+                        {email.address}
+                      </Link>
+                    ))}
                   </span>
                   <span></span>
                 </div>
@@ -199,8 +141,7 @@ const Footer = () => {
             </ul>
             <div className="flex-grow text-center lg:text-right">
               <p className="text-white text-lg font-medium inline-block">
-                &copy; {new Date().getFullYear()} Fine Work Kenya Limited. ALL
-                Rights Reserved
+                &copy; {new Date().getFullYear()} {footer.copyright}
               </p>
             </div>
           </div>

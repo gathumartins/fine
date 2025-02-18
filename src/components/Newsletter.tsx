@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const Newsletter = () => {
+const Newsletter = ({news}:any) => {
         const [email, setEmail] = useState("");
         const [state, setState] = useState("idle");
         const [errorMsg, setErrorMsg] = useState<{ title: string } | null>(
@@ -32,8 +32,8 @@ const Newsletter = () => {
       <div className="myCont">
         <div className="max-w-[1000px] mx-auto max-md:flex-col flex justify-between gap-4">
           <h3 className="font-semibold text-[40px] leading-10">
-            <span className="font-normal text-[36px]">Newsletter</span>
-            <br /> Subscribe now
+            <span className="font-normal text-[36px]">{news.title}</span>
+            <br /> {news.subtitle}
           </h3>
           <form
             action=""

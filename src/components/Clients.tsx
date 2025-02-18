@@ -6,10 +6,10 @@ const ClientsCarousel = dynamic(() => import("./ClientsSlider"), {
   ssr: false,
 });
 
-const Clients = () => {
+const Clients = ({clients}:any) => {
   return (
     <section className="myCont py-[60px] px-[16px]">
-      <ClientsCarousel/>
+      <ClientsCarousel clients={clients}/>
     </section>
   )
 }
