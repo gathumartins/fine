@@ -52,13 +52,12 @@ const Footer = ({footer, news, quick, clients}:any) => {
               </h3>
               <ul className="leading-9 pl-0 font-medium text-xl">
                 {footer.socials.map((social: any, index: number) => (
-                  <li>
+                  <li key={index}>
                     {social.social.link !== null && (
                       <Link
                         href={`${social.social.link}`}
                         target="_blank"
                         className="text-white hover:text-fprimary no-underline"
-                        key={index}
                       >
                         {social.social.label}
                       </Link>

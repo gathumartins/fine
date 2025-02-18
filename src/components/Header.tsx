@@ -9,7 +9,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 
-const Header = () => {
+const Header = ({header, main}:any) => {
   const [solid, setSolid] = useState(false);
   return (
     <header className="bg-fsecondary lg:py-[40px] max-sm:px-[16px] max-lg:fixed w-full lg:relative z-40">
@@ -18,37 +18,40 @@ const Header = () => {
           <PhoneIcon className="h-6 w-6" />
           <span className="text-base text-fshade">
             <Link
-              href="tel:+254736709540"
+              href={`tel:+${header.phone}`}
               className="hover:text-fshade no-underline text-white"
             >
-              +254 736 709 540
+              {`+${header.phone}`}
             </Link>
           </span>
         </div>
         <div className="flex justify-center gap-2">
           <ClockIcon className="h-6 w-6" />
-          <span className="text-base text-white">08:00 AM - 5:00 PM</span>
+          <span className="text-base text-white">{header.time}</span>
         </div>
         <div className="flex justify-end gap-2">
           <EnvelopeIcon className="h-6 w-6" />
           <span className="text-base text-fshade">
             <Link
-              href="mailto:info@finework.co.ke"
+              href={`mailto:${header.email}`}
               className="hover:text-fshade no-underline text-white"
             >
-              info@finework.co.ke
+              {header.email}
             </Link>
           </span>
         </div>
       </div>
       <div className="myCont lg:hidden flex justify-between place-items-center lg:py-[40px] py-[16px]">
-        <Image
-          src="/images/logowhite.webp"
-          width="180"
-          height="41"
-          alt="Finework Kenya Limited Logo"
-        />
-        <MobileMenu/>
+        {header.whitelogo !== null && (
+          <Image
+            src={header.whitelogo.node.mediaItemUrl}
+            width={header.whitelogo.node.mediaDetails.width}
+            height={header.whitelogo.node.mediaDetails.height}
+            alt={`Finework Kenya Limited Logo || ${header.whitelogo.node.altText}`}
+            className="w-[180px]"
+          />
+        )}
+        <MobileMenu header={header} main={main}/>
       </div>
     </header>
   );

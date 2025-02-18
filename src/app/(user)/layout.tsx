@@ -74,6 +74,18 @@ export default async function MainLayout({
     }
     name
   }
+  main:menu(id: "dGVybToy") {
+    menuItems {
+      edges {
+        node {
+          id
+          label
+          uri
+        }
+      }
+    }
+    name
+  }
   clients:clients {
     edges {
       node {
@@ -100,11 +112,16 @@ export default async function MainLayout({
     }
   );
   const data = await res.json();
-  // console.log(data.data.clients.edges[0].node)
   return (
     <>
-      <Header />
-      <Navbar />
+      <Header
+        header={data.data.layout.headerFooter.header}
+        main={data.data.main.menuItems.edges}
+      />
+      <Navbar
+        main={data.data.main.menuItems.edges}
+        logo={data.data.layout.headerFooter.header.logo}
+      />
       <main className="min-h-lvh">{children}</main>
       <Footer
         footer={data.data.layout.headerFooter.footer}

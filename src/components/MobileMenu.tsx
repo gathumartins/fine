@@ -18,7 +18,7 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/outline";
 
-function MobileMenu() {
+function MobileMenu({header, main}:any) {
    const [open, setOpen] = useState(false);
   return (
     <div>
@@ -29,82 +29,32 @@ function MobileMenu() {
         <SheetContent className="max-sm:w-full lg:hidden [&_svg]:w-10 bg-ftone [&_svg]:text-white [&_svg]:hover:text-fprimary [&_svg]:h-8 [&_button]:top-3 [&_button]:left-4 [&_button]:w-[40px] p-0 [&_button]:ring-0 [&_button]:ring-offset-0 [&_button]:shadow-none [&_button]:focus:ring-0 [&_button]:focus:ring-offset-0 [&_button]:focus:shadow-none border-fprimary border-l-1">
           <SheetHeader className="bg-fsecondary px-4 pb-4 h-[60px] rounded-bl-large shadow-lg shadow-fprimary">
             <SheetTitle className="sr-only">
-              Are you absolutely sure?
+              Fine Work Kenya Limited Mobile Menu Drawer
             </SheetTitle>
             <div className="max-w-[85%] ml-[15%] pt-2 flex flex-col gap-1">
               <div className="flex justify-end gap-2">
                 <span className="text-base text-white font-semibold">
-                  Mon-Fri: 08:00 AM - 5:00 PM
+                  Mon-Fri: {header.time}
                 </span>
               </div>
             </div>
           </SheetHeader>
           <nav className="px-4 py-8">
             <ul className="flex flex-col justify-start gap-10 text-center font-bold mb-0">
-              <li>
-                <Link
-                  href="/"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/projects"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-xl text-white hover:text-fprimary no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contacts"
-                  className="text-xl text-white hover:text-fprimary
-                   no-underline"
-                  onClick={() => setOpen(false)}
-                >
-                  Contacts
-                </Link>
-              </li>
+              {main.map((menu: any) => (
+                <li key={menu.node.id}>
+                  {menu.node.uri !== null && (
+                    <Link
+                      title={menu.node.label}
+                      href={menu.node.uri}
+                      className="text-xl text-white hover:text-fprimary no-underline"
+                      onClick={() => setOpen(false)}
+                    >
+                      {menu.node.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
           <SheetFooter className="fixed bottom-0 border-t-1 border-fprimary border-r-1 rounded-tr-large bg-fsecondary">
@@ -113,22 +63,24 @@ function MobileMenu() {
                 <li className="flex flex-start gap-2">
                   <span className="text-base text-fshade">
                     <Link
-                      href="mailto:info@finework.co.ke"
+                      title="mailto link"
+                      href={`mailto:${header.email}`}
                       className="hover:text-fshade no-underline text-white"
                       onClick={() => setOpen(false)}
                     >
-                      info@finework.co.ke
+                      {header.email}
                     </Link>
                   </span>
                 </li>
                 <li className="flex flex-start gap-2">
                   <span className="text-base text-fshade">
                     <Link
-                      href="tel:+254736709540"
+                      title="phone link"
+                      href={`tel:+${header.phone}`}
                       className="hover:text-fshade no-underline text-white"
                       onClick={() => setOpen(false)}
                     >
-                      +254 736 709 540
+                      {`+${header.phone}`}
                     </Link>
                   </span>
                 </li>
