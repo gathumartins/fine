@@ -71,13 +71,13 @@ const HomeHero = ({hero}:any) => {
       <div className="absolute inset-0 hidden md:flex justify-between items-center px-4">
         <Button
           onClick={prevSlide}
-          className="text-ftone bg-fprimary hover:bg-fsecondary hover:text-white"
+          className="text-fsecondary rounded-none bg-fprimary hover:bg-fsecondary hover:text-white"
         >
           &#9664;
         </Button>
         <Button
           onClick={nextSlide}
-          className="text-ftone bg-fprimary hover:bg-fsecondary hover:text-white"
+          className="text-fsecondary rounded-none bg-fprimary hover:bg-fsecondary hover:text-white"
         >
           &#9654;
         </Button>

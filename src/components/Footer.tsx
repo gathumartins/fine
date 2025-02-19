@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { FaMapMarkerAlt, FaRegEnvelope } from "react-icons/fa";
-import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
+import { FaMapMarkerAlt, FaRegEnvelope, FaMobileAlt } from "react-icons/fa";
 import Clients from "./Clients";
 import Newsletter from "./Newsletter";
 
@@ -80,9 +79,9 @@ const Footer = ({footer, news, quick, clients}:any) => {
                   </p>
                 </div>
 
-                <div className="flex flex-start place-items-center mb-[8px]">
+                <div className="flex flex-start place-items-center mb-[10px]">
                   <div className="w-[30px] mr-[10px] text-center">
-                    <HiMiniDevicePhoneMobile className="w-[20px]" />
+                    <FaMobileAlt className="w-full" />
                   </div>
                   <span className="text-xl font-medium grid grid-cols-1 leading-6">
                     {footer.contacts.phone.map((phone: any, index: number) => (
@@ -97,9 +96,9 @@ const Footer = ({footer, news, quick, clients}:any) => {
                   </span>
                 </div>
 
-                <div className="flex flex-start mb-[8px] leading-1">
+                <div className="flex flex-start mb-[10px] leading-1">
                   <div className="w-[30px] mr-[10px] pt-1 text-center">
-                    <FaRegEnvelope className="w-[20px]" />
+                    <FaRegEnvelope className="w-full" />
                   </div>
                   <span className="text-xl font-medium grid grid-cols-1">
                     {footer.contacts.email.map((email: any, index: number) => (

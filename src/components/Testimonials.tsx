@@ -43,8 +43,8 @@ function Testimonials() {
               </CarouselItem>
             ))}
           </CarouselContent>
-            <CarouselPrevious className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center"/>
-            <CarouselNext className="bg-fprimary hover:bg-fshade border-fprimary text-fsecondary hidden sm:flex justify-center"/>
+            <CarouselPrevious className="bg-fprimary hover:bg-fsecondary text-fsecondary hover:text-white border-none rounded-none hidden sm:flex justify-center"/>
+            <CarouselNext className="bg-fprimary hover:bg-fsecondary text-fsecondary hover:text-white border-none rounded-none hidden sm:flex justify-center"/>
         </Carousel>
       </div>
     </section>
