@@ -9,12 +9,32 @@ import {
 } from "@heroicons/react/24/solid";
 import ContactForm from '@/components/ContactForm';
 
-const page = () => {
+const page = async () => {
+const query = `{
+  page:page(id: "cG9zdDoyNg==", idType: ID) {
+    minibanner {
+      header {
+        title
+        image {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+
+}`;
+const result = await fetch(
+  `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
+  { headers: { "Content-Type": "application/json" } }
+);
+const data = await result.json();
   return (
     <article className="page">
       <section className="">
         <header className="bg-fsecondary/80 pt-[87px] w-full">
-          <PagesHero />
+          <PagesHero data={data.data.page.minibanner.header} />
         </header>
       </section>
       <section className="myCont pt-[80px] px-[16px]">
