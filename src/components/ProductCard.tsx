@@ -10,10 +10,10 @@ import {
 
 function ProductCard() {
   return (
-    <Card className="group relative">
-      <CardHeader className="min-h-[246px] bg-[url('/images/service.webp')] bg-cover bg-center bg-no-repeat relative rounded-t-md">
+    <Card className="group relative rounded-none">
+      <CardHeader className="min-h-[246px] bg-[url('/images/service.webp')] bg-cover bg-center bg-no-repeat relative rounded-none">
         <CardTitle className="sr-only">Card Title</CardTitle>
-        <CardDescription className="min-w-[70px] rounded-sm text-white group-hover:text-fsecondary bg-fsecondary group-hover:bg-fprimary transition-all duration-300 px-3 py-2 flex justify-center place-items-center text-base font-medium text-center absolute top-4 right-4">
+        <CardDescription className="min-w-[70px] rounded-none text-white group-hover:text-fsecondary bg-fsecondary group-hover:bg-fprimary transition-all duration-300 px-3 py-2 flex justify-center place-items-center text-base font-medium text-center absolute top-4 right-4">
           -10%
         </CardDescription>
       </CardHeader>
