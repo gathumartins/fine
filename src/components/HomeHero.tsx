@@ -4,46 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const images = [
-  {
-    src: "/images/homeproducts.webp", // Replace with your image URLs
-    title: "Fine Work Kenya Limited",
-    subtitle: "Cutting-Edge Fire Products",
-    link: {
-      title: "View Products",
-      url: "/products",
-    },
-  },
-  {
-    src: "/images/homeservices.webp",
-    title: "Fine Work Kenya Limited",
-    subtitle: "For All Fire Related Services",
-    link: {
-      title: "View Projects",
-      url: "/projects",
-    },
-  },
-  {
-    src: "/images/homeprojects.webp",
-    title: "Fine Work Kenya Limited",
-    subtitle: "Projects That Define Innovation",
-    link: {
-      title: "View Services",
-      url: "/services",
-    },
-  },
-];
 
-const HomeHero = () => {
+const HomeHero = ({hero}:any) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % hero.length);
     };
 
     const prevSlide = () => {
       setCurrentIndex(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length
+        (prevIndex) => (prevIndex - 1 + hero.length) % hero.length
       );
     };
 
@@ -57,8 +28,8 @@ const HomeHero = () => {
   return (
     <div className="relative w-full min-h-[720px] max-lg:min-h-[600px] max-md:max-h-[500px] overflow-hidden bg-fsecondary/70">
       <AnimatePresence>
-        {images.map(
-          (image, index) =>
+        {hero.map(
+          (image: any, index: number) =>
             index === currentIndex && (
               <motion.div
                 key={index}
@@ -69,8 +40,10 @@ const HomeHero = () => {
                 className="absolute inset-0 w-full h-full"
               >
                 <img
-                  src={image.src}
+                  src={image.banner.node.mediaItemUrl}
                   alt={image.title}
+                  height={image.banner.node.mediaDetails.height}
+                  width={image.banner.node.mediaDetails.width}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-fsecondary/70 flex flex-col justify-center items-left text-white p-4">
@@ -81,8 +54,12 @@ const HomeHero = () => {
                     <h3 className="text-[60px] max-md:text-[40px] max-lg:text-[50px] max-md:mb-[20px] mb-[40px]">
                       {image.subtitle}
                     </h3>
-                    <Link href={image.link.url} className="heroBtn">
-                      {image.link.title}
+                    <Link
+                      title={image.link.label}
+                      href={image.link.path}
+                      className="heroBtn"
+                    >
+                      {image.link.label}
                     </Link>
                   </div>
                 </div>
@@ -93,23 +70,21 @@ const HomeHero = () => {
 
       <div className="absolute inset-0 hidden md:flex justify-between items-center px-4">
         <Button
-          variant="ghost"
           onClick={prevSlide}
-          className="text-white bg-ftone hover:bg-fsecondary hover:text-white"
+          className="text-ftone bg-fprimary hover:bg-fsecondary hover:text-white"
         >
           &#9664;
         </Button>
         <Button
-          variant="ghost"
           onClick={nextSlide}
-          className="text-white bg-ftone hover:bg-fsecondary hover:text-white"
+          className="text-ftone bg-fprimary hover:bg-fsecondary hover:text-white"
         >
           &#9654;
         </Button>
       </div>
 
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
+        {hero.map((_: any, index: number) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
