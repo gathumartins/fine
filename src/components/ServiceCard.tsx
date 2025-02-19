@@ -8,6 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
 
 
 function ServiceCard() {
@@ -22,8 +24,8 @@ function ServiceCard() {
           <h3>Heading</h3>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime dignissimos explicabo mollitia non culpa est rem ipsum deleniti. Placeat?</p>
         </CardContent>
-        <CardFooter className="[&_a]:underline [&_a]:text-fsecondary [&_a]:text-lg [&_a]:font-bold px-0 pt-0">
-          <Link href="/services/1" className="group-hover:text-fprimary transition-all duration-400">See More</Link>
+        <CardFooter className="[&_button]:underline [&_button]:text-fsecondary [&_button]:text-xl [&_button]:font-bold px-0 pt-0">
+            <Button  className="group-hover:text-fprimary transition-all duration-400 bg-transparent rounded-none hover:bg-transparent text-xl">See More</Button>
         </CardFooter>
       </Card>
     </Link>
