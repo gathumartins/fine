@@ -25,7 +25,7 @@ function ServiceCard() {
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque maxime dignissimos explicabo mollitia non culpa est rem ipsum deleniti. Placeat?</p>
         </CardContent>
         <CardFooter className="[&_button]:underline [&_button]:text-fsecondary [&_button]:text-xl [&_button]:font-bold px-0 pt-0">
-            <Button  className="group-hover:text-fprimary transition-all duration-400 bg-transparent rounded-none hover:bg-transparent text-xl">See More</Button>
+            <Button  className="group-hover:text-fprimary transition-all duration-400 bg-transparent rounded-none hover:bg-transparent text-xl p-0">See More</Button>
         </CardFooter>
       </Card>
     </Link>
