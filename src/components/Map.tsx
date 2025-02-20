@@ -7,17 +7,18 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "100%",
-  height: "400px",
-};
 
-const center = {
-  lat: -1.30048,
-  lng: 36.83753,
-};
 
-function Map() {
+function Map({mapd}:any) {
+  const containerStyle = {
+    width: "100%",
+    height: `${mapd.height}px`,
+  };
+
+  const center = {
+    lat: mapd.center.lat,
+    lng: mapd.center.lng,
+  };
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
@@ -37,7 +38,7 @@ function Map() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={18}
+      zoom={mapd.zoom}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >

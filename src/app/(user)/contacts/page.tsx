@@ -22,6 +22,28 @@ const query = `{
         }
       }
     }
+    contactsFields {
+      map {
+        center {
+          lat
+          lng
+        }
+        zoom
+        height
+      }
+      formtitle
+      contact {
+        title
+        location
+        phone {
+          number
+        }
+        mail {
+          email
+          postal
+        }
+      }
+    }
   }
 
 }`;
@@ -30,6 +52,7 @@ const result = await fetch(
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
+console.log(data.data.page.contactsFields.map)
   return (
     <article className="page">
       <section className="">
@@ -38,7 +61,7 @@ const data = await result.json();
         </header>
       </section>
       <section className="myCont pt-[80px] px-[16px]">
-        <Map />
+        <Map mapd={data.data.page.contactsFields.map} />
       </section>
       <div className="myCont pt-[50px] px-[16px]">
         <section className="flex lg:flex-row flex-col">
