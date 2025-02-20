@@ -2,10 +2,11 @@
 import React from 'react'
 import CountUp from "react-countup";
 
-function Stats() {
+function Stats({stats}:any) {
+  console.log(stats)
   return (
     <div className="w-full lg:w-1/2 grid sm:grid-cols-2 gap-5">
-      {[1, 2, 3, 4].map((item: any, index: number) => (
+      {stats.map((stat: any, index: number) => (
         <div
           className="hover:bg-fsecondary sm:first:mt-10 bg-white border-1 sm:last:mt-0 md:last:-mt-10 border-fsecondary sm:h-[180px] md:h-[210px] xl:h-[180px] [&_h4]:hover:text-white p-[20px] text-center [&_h5]:hover:text-white flex flex-col place-items-center rounded-none"
           key={index}
@@ -14,7 +15,7 @@ function Stats() {
             <h4 className="text-fsecondary text-3xl">
               <CountUp
                 start={0}
-                end={100}
+                end={stat.item.value}
                 duration={2.5}
                 delay={0.5}
                 separator=","
@@ -29,7 +30,7 @@ function Stats() {
               </CountUp>
             </h4>
             <h5 className="text-xl font-avenirBlack text-ftone">
-              Projects
+              {stat.item.title}
             </h5>
           </div>
         </div>

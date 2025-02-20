@@ -19,6 +19,20 @@ const query = `{
       }
     }
   }
+  com:common(id: "cG9zdDoxNjE=", idType: ID) {
+    stats {
+      stats {
+        title
+        subtitle
+        stat {
+          item {
+            title
+            value
+          }
+        }
+      }
+    }
+  }
 
 }`;
 const result = await fetch(
@@ -37,7 +51,7 @@ const data = await result.json();
       <section className="py-12 px-[16px]">
         <div className="myCont py-12 px-[30px] md:px-[50px] lg:px-[80px] flex flex-col lg:flex-row justify-between gap-8 place-items-center [&_a]:hidden">
           <AboutSec />
-          <Stats />
+          <Stats stats={data.data.com.stats.stats.stat} />
         </div>
       </section>
       <CertsAwards />

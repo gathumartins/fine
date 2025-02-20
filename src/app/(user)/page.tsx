@@ -59,6 +59,20 @@ export default async function Home() {
       }
     }
   }
+  com:common(id: "cG9zdDoxNjE=", idType: ID) {
+    stats {
+      stats {
+        title
+        subtitle
+        stat {
+          item {
+            title
+            value
+          }
+        }
+      }
+    }
+  }
 
   }`;
     const result = await fetch(
@@ -66,11 +80,11 @@ export default async function Home() {
       { headers: { "Content-Type": "application/json" } }
     );
     const data = await result.json();
-    // console.log(data.data.page.homeFields.hero)
+    // console.log(data.data.com.stats.stats)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
-      <HomeStats />
+      <HomeStats stats={data.data.com.stats.stats} />
       <Proposition />
       <Testimonials />
     </article>
