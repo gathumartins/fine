@@ -66,7 +66,7 @@ export default async function Home() {
       { headers: { "Content-Type": "application/json" } }
     );
     const data = await result.json();
-    console.log(data.data.page.homeFields.hero)
+    // console.log(data.data.page.homeFields.hero)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
