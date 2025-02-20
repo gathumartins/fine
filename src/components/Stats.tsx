@@ -3,7 +3,6 @@ import React from 'react'
 import CountUp from "react-countup";
 
 function Stats({stats}:any) {
-  console.log(stats)
   return (
     <div className="w-full lg:w-1/2 grid sm:grid-cols-2 gap-5">
       {stats.map((stat: any, index: number) => (

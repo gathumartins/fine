@@ -8,6 +8,7 @@ import React from 'react'
 const page = async () => {
 const query = `{
   page:page(id: "cG9zdDoxNg==", idType: ID) {
+    content
     minibanner {
       header {
         title
@@ -40,7 +41,8 @@ const result = await fetch(
       { headers: { "Content-Type": "application/json" } }
     );
 const data = await result.json();
-// console.log(data.data.page.minibanner.header)
+const cl = 0;
+// console.log(data.data.page.content)
   return (
     <article className="page">
       <section className="">
@@ -50,7 +52,11 @@ const data = await result.json();
       </section>
       <section className="py-12 px-[16px]">
         <div className="myCont py-12 px-[30px] md:px-[50px] lg:px-[80px] flex flex-col lg:flex-row justify-between gap-8 place-items-center [&_a]:hidden">
-          <AboutSec />
+          <AboutSec
+            secTitles={data.data.com.stats.stats}
+            cont={data.data.page.content}
+            cl={cl}
+          />
           <Stats stats={data.data.com.stats.stats.stat} />
         </div>
       </section>

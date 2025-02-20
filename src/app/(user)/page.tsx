@@ -59,6 +59,19 @@ export default async function Home() {
       }
     }
   }
+  about:page(id: "cG9zdDoxNg==", idType: ID) {
+    content
+    minibanner {
+      header {
+        title
+        image {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
   com:common(id: "cG9zdDoxNjE=", idType: ID) {
     stats {
       stats {
@@ -80,11 +93,16 @@ export default async function Home() {
       { headers: { "Content-Type": "application/json" } }
     );
     const data = await result.json();
+    const cl =4;
     // console.log(data.data.com.stats.stats)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
-      <HomeStats stats={data.data.com.stats.stats} />
+      <HomeStats
+        stats={data.data.com.stats.stats}
+        cont={data.data.about.content}
+        cl={cl}
+      />
       <Proposition />
       <Testimonials />
     </article>
