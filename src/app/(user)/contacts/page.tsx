@@ -52,7 +52,6 @@ const result = await fetch(
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
-console.log(data.data.page.contactsFields.map)
   return (
     <article className="page">
       <section className="">
@@ -67,33 +66,33 @@ console.log(data.data.page.contactsFields.map)
         <section className="flex lg:flex-row flex-col">
           <div className="lg:w-[33%] w-[100%]">
             <h2 className="font-bold text-3xl max-md:text-2xl max-sm:text-xl mb-7">
-              Contact Information
+              {data.data.page.contactsFields.contact.title}
             </h2>
             <div>
               <div className="flex items-stretch mb-5">
                 <MapPinIcon className="w-7 h-7 mr-5" />
-                <span className="text-xl font-medium">
-                  Enterprise Center Building,
-                  <br /> Enterprise Road, Industrial <br />
-                  Area, Nairobi Kenya.
-                </span>
+                <span
+                  className="text-xl font-medium"
+                  dangerouslySetInnerHTML={{
+                    __html: data.data.page.contactsFields.contact.location,
+                  }}
+                ></span>
               </div>
 
               <div className="flex items-stretch mb-5">
                 <PhoneIcon className="w-7 h-7 mr-5" />
                 <span className="text-xl font-medium grid grid-cols-1">
-                  <Link
-                    href="tel:+254754006060"
-                    className="text-fsecondary no-underline hover:text-fprimary"
-                  >
-                    +254 754 006 060
-                  </Link>
-                  <Link
-                    href="tel:+254736709540"
-                    className="text-fsecondary no-underline hover:text-fprimary"
-                  >
-                    +254 736 709 540
-                  </Link>
+                  {data.data.page.contactsFields.contact.phone.map(
+                    (phonen: any, index: number) => (
+                      <Link
+                        href={`tel:+${phonen.number}`}
+                        className="text-fsecondary no-underline hover:text-fprimary"
+                        key={index}
+                      >
+                        +{phonen.number}
+                      </Link>
+                    )
+                  )}
                 </span>
               </div>
 
@@ -101,12 +100,12 @@ console.log(data.data.page.contactsFields.map)
                 <EnvelopeOpenIcon className="w-7 h-7 mr-5" />
                 <span className="text-xl font-medium grid grid-cols-1">
                   <Link
-                    href="mailto:info@finework.co.ke"
+                    href={`mailto:${data.data.page.contactsFields.contact.mail.email}`}
                     className="text-fsecondary no-underline hover:text-fprimary"
                   >
-                    info@finework.co.ke
+                    {data.data.page.contactsFields.contact.mail.email}
                   </Link>
-                  <p>P.O. Box 59765-00500 Nrb KE</p>
+                  <p>{data.data.page.contactsFields.contact.mail.postal}</p>
                 </span>
                 <span></span>
               </div>
@@ -114,7 +113,7 @@ console.log(data.data.page.contactsFields.map)
           </div>
           <div className="flex-1">
             <h2 className="font-bold text-3xl max-md:text-2xl max-sm:text-xl mb-7">
-              Leave Your Message
+              {data.data.page.contactsFields.formtitle}
             </h2>
             <ContactForm />
           </div>
