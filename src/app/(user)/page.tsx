@@ -100,22 +100,20 @@ export default async function Home() {
   }
 
   }`;
-    const result = await fetch(
-      `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
-      { headers: { "Content-Type": "application/json" } }
-    );
-    const data = await result.json();
-    const cl =4;
-    // console.log(data.data.tests.edges)
+  const result = await fetch(
+    `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
+    { headers: { "Content-Type": "application/json" } }
+  );
+  const data = await result.json();
+
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
       <HomeStats
         stats={data.data.com.stats.stats}
         cont={data.data.about.content}
-        cl={cl}
       />
-      <Proposition />
+      <Proposition vprop={data.data.page.homeFields.proposition}/>
       <Testimonials tests={data.data.tests.edges} />
     </article>
   );
