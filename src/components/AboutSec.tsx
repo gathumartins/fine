@@ -3,7 +3,7 @@ import Link from 'next/link';
 import clsx from "clsx";
 
 function AboutSec({secTitles, cont, cl}:any) {
-  let clamp =cl;
+  let clamp=cl;
   return (
     <div className="lg:w-1/2 body sub title">
       <h3>{secTitles.title}</h3>

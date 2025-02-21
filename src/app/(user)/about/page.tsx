@@ -55,7 +55,7 @@ const cl = 0;
           <AboutSec
             secTitles={data.data.com.stats.stats}
             cont={data.data.page.content}
-            cl={cl}
+            cl={0}
           />
           <Stats stats={data.data.com.stats.stats.stat} />
         </div>
