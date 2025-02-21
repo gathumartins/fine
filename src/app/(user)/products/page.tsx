@@ -1,6 +1,7 @@
 import MyPagination from '@/components/MyPagination';
 import PagesHero from '@/components/PagesHero'
-import React from 'react'
+import ProCats from '@/components/ProCats';
+import React from 'react';
 
 const page = async() => {
 const query = `{
@@ -16,13 +17,41 @@ const query = `{
       }
     }
   }
-  proCats:prosyss{
+  proCats:prosyss {
     edges {
       node {
         id
         name
         slug
         prosysId
+        products {
+          edges {
+            node {
+              id
+              title
+              slug
+              featuredImage {
+                node {
+                  altText
+                  mediaDetails {
+                    height
+                    width
+                  }
+                  mediaItemUrl
+                }
+              }
+              productFields {
+                variations {
+                  variation {
+                    label
+                    percentdiscount
+                    price
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -33,13 +62,11 @@ const result = await fetch(
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
-  let products = [1, 2, 3, 4, 5, 6, 7];
   const itemsPerPage = 6;
   const comp = "product";
   const sortedCats = data.data.proCats.edges.sort(
     (a:any, b:any) => a.node.prosysId - b.node.prosysId
   );
-  // console.log(sortedCats);
   return (
     <article className="page">
       <section className="">
@@ -47,7 +74,7 @@ const data = await result.json();
           <PagesHero data={data.data.page.minibanner.header} />
         </header>
       </section>
-      <MyPagination items={products} ipp={itemsPerPage} comp={comp} />
+      <ProCats ipp={itemsPerPage} comp={comp} sortedCats={sortedCats} />
     </article>
   );
 }
