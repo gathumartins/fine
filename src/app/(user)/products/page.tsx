@@ -16,6 +16,16 @@ const query = `{
       }
     }
   }
+  proCats:prosyss{
+    edges {
+      node {
+        id
+        name
+        slug
+        prosysId
+      }
+    }
+  }
 
 }`;
 const result = await fetch(
@@ -26,6 +36,10 @@ const data = await result.json();
   let products = [1, 2, 3, 4, 5, 6, 7];
   const itemsPerPage = 6;
   const comp = "product";
+  const sortedCats = data.data.proCats.edges.sort(
+    (a:any, b:any) => a.node.prosysId - b.node.prosysId
+  );
+  // console.log(sortedCats);
   return (
     <article className="page">
       <section className="">
