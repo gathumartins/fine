@@ -106,7 +106,7 @@ export default async function Home() {
     );
     const data = await result.json();
     const cl =4;
-    console.log(data.data.tests.edges)
+    // console.log(data.data.tests.edges)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
