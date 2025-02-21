@@ -86,6 +86,18 @@ export default async function Home() {
       }
     }
   }
+  tests:testimonials {
+    edges {
+      node {
+        id
+        title
+        content
+        testimonialFields {
+          company
+        }
+      }
+    }
+  }
 
   }`;
     const result = await fetch(
@@ -94,7 +106,7 @@ export default async function Home() {
     );
     const data = await result.json();
     const cl =4;
-    // console.log(data.data.com.stats.stats)
+    console.log(data.data.tests.edges)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
@@ -104,7 +116,7 @@ export default async function Home() {
         cl={cl}
       />
       <Proposition />
-      <Testimonials />
+      <Testimonials tests={data.data.tests.edges} />
     </article>
   );
 }
