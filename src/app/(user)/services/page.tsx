@@ -52,7 +52,7 @@ const data = await result.json();
   let services = data.data.services.edges;
   const itemsPerPage = 6;
   const comp = "service";
-  console.log(services.length)
+  // console.log(services.length)
   return (
     <article className="page">
       <section className="">

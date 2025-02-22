@@ -18,7 +18,7 @@ function BlogCard() {
           <CardTitle className="sr-only">Card Title</CardTitle>
         </CardHeader>
         <CardContent className="body px-0 pb-0 [&_h3]:text-2xl [&_h3]:font-bold [&_h4]:text-ftone [&_h4]:text-lg">
-          <h4>AUGUST 4, 2020</h4>
+          <h4>AUG 4, 2020</h4>
           <h3>Heading</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
