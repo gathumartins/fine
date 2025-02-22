@@ -15,7 +15,7 @@ function ProCats({ sortedCats, ipp, comp }: any) {
 const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
 let products = [1, 2, 3, 4, 5, 6, 7];
   return (
-    <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
+    <section className="pt-14 md:pt-20 px-[16px]">
       <div className="myCont">
         <Tabs
           defaultValue={selectedTab}
@@ -23,7 +23,7 @@ let products = [1, 2, 3, 4, 5, 6, 7];
           onValueChange={setSelectedTab}
           className="w-full relative"
         >
-          <div className="md:hidden w-full px-4 mb-4">
+          <div className="md:hidden w-full mb-4">
             <Select onValueChange={setSelectedTab} value={selectedTab}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Select a category" />
@@ -48,7 +48,7 @@ let products = [1, 2, 3, 4, 5, 6, 7];
             <TabsContent
               value={cat.node.slug}
               key={cat.node.id}
-              className="p-0"
+              className="p-0 mt-8"
             >
               <h3>{cat.node.name}</h3>
               <MyPagination items={products} ipp={ipp} comp={comp} />
