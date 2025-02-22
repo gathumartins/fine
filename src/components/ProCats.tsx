@@ -37,9 +37,13 @@ let products = [1, 2, 3, 4, 5, 6, 7];
               </SelectContent>
             </Select>
           </div>
-          <TabsList className="hidden md:flex justify-center sticky top-[90px] z-20 mx-auto bg-fprimary text-fsecondary text-2xl font-semibold">
+          <TabsList className="hidden md:flex justify-center sticky top-[90px] z-20 mx-auto bg-fprimary font-semibold border-1 border-fprimary">
             {sortedCats.map((catsH: any) => (
-              <TabsTrigger key={catsH.node.id} value={catsH.node.slug}>
+              <TabsTrigger
+                key={catsH.node.id}
+                value={catsH.node.slug}
+                className="text-lg text-fsecondary"
+              >
                 {catsH.node.name}
               </TabsTrigger>
             ))}

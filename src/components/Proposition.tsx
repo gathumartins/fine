@@ -30,7 +30,7 @@ function Proposition({vprop}:any) {
         <div className="lg:w-1/2 w-full">
           {vprop.values.map((propValue: any, index: number) => (
             <div className="flex justify-start body statsub mb-8" key={index}>
-              <div className="w-[110px] mr-4 [&_p]:mt-5">
+              <div className="w-[120px] mr-4 [&_p]:mt-5">
                 {propValue.icon !== null && (
                   <Image
                     src={propValue.icon.node.mediaItemUrl}

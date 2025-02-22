@@ -12,12 +12,12 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-function Testimonials({tests}:any) {
+function Testimonials({tests, headings}:any) {
   return (
     <section className="py-[60px] px-[16px] bg-fshade/50">
       <header className="myCont sub title mb-5">
-        <h2 className="leading-none !mb-0">Testimonials</h2>
-        <h3 className="leading-none">What clients say</h3>
+        <h2 className="leading-none !mb-0">{headings.title}</h2>
+        <h3 className="leading-none">{headings.subtitle}</h3>
       </header>
       <div className="myCont">
         <Carousel opts={{ align: "start", loop: true }}>

@@ -14,8 +14,8 @@ function CertsAwards() {
   return (
     <section className="py-[60px] px-[16px] bg-ftone">
       <header className="myCont sub title mb-5 text-center">
-        <h2 className="leading-none !mb-0 !text-fprimary">Achievements</h2>
-        <h3 className="leading-none !text-white">Awards & Certifications</h3>
+        <h2 className="leading-none !mb-0 !text-fprimary">Partnerships</h2>
+        <h3 className="leading-none !text-white">Standards & Certifications</h3>
       </header>
       <div className="myCont ">
         <Carousel opts={{ align: "start", loop: true }}>

@@ -27,6 +27,10 @@ export default async function Home() {
           }
         }
       }
+      testimonials {
+        title
+        subtitle
+      }
       proposition {
         title
         subtitle
@@ -105,7 +109,7 @@ export default async function Home() {
     { headers: { "Content-Type": "application/json" } }
   );
   const data = await result.json();
-
+  // console.log(data.data.page.homeFields.testimonials)
   return (
     <article className="home">
       <HomeHero hero={data.data.page.homeFields.hero} />
@@ -113,8 +117,11 @@ export default async function Home() {
         stats={data.data.com.stats.stats}
         cont={data.data.about.content}
       />
-      <Proposition vprop={data.data.page.homeFields.proposition}/>
-      <Testimonials tests={data.data.tests.edges} />
+      <Proposition vprop={data.data.page.homeFields.proposition} />
+      <Testimonials
+        tests={data.data.tests.edges}
+        headings={data.data.page.homeFields.testimonials}
+      />
     </article>
   );
 }
