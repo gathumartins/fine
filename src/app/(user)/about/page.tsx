@@ -31,6 +31,7 @@ const query = `{
           core {
             title
             body
+            shortname
           }
         }
       }
@@ -58,7 +59,7 @@ const result = await fetch(
     );
 const data = await result.json();
 const cl = 0;
-console.log(data.data.page.aboutFields.partners)
+console.log(data.data.page.aboutFields.statements)
   return (
     <article className="page">
       <section className="">
@@ -77,7 +78,7 @@ console.log(data.data.page.aboutFields.partners)
         </div>
       </section>
       <CertsAwards headings={data.data.page.aboutFields.partners} />
-      <CoreStatements />
+      <CoreStatements states={data.data.page.aboutFields.statements} />
     </article>
   );
 }
