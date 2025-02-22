@@ -11,9 +11,8 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 
-function ProCats({ sortedCats, ipp, comp }: any) {
+function ProCats({ sortedCats, ipp, comp, items }: any) {
 const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
-let products = [1, 2, 3, 4, 5, 6, 7];
   return (
     <section className="pt-14 md:pt-20 px-[16px]">
       <div className="myCont">
@@ -55,7 +54,7 @@ let products = [1, 2, 3, 4, 5, 6, 7];
               className="p-0 mt-8"
             >
               <h3>{cat.node.name}</h3>
-              <MyPagination items={products} ipp={ipp} comp={comp} />
+              <MyPagination items={items} ipp={ipp} comp={comp} />
             </TabsContent>
           ))}
         </Tabs>

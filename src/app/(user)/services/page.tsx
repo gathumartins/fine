@@ -16,16 +16,43 @@ const query = `{
       }
     }
   }
-
+  services:services {
+    edges {
+      node {
+        id
+        title
+        slug
+        serviceFields {
+          serviceicon {
+            node {
+              altText
+              mediaDetails {
+                height
+                width
+              }
+              mediaItemUrl
+            }
+          }
+        }
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
 }`;
 const result = await fetch(
   `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
-  let services = [1, 2, 3, 4, 5, 6, 7];
+  let services = data.data.services.edges;
   const itemsPerPage = 6;
   const comp = "service";
+  console.log(services.length)
   return (
     <article className="page">
       <section className="">

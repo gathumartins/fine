@@ -7,7 +7,6 @@ import ProjectCard from "./ProjectCard";
 import BlogCard from "./BlogCard";
 
 function MyPagination({ items, ipp, comp, cTitle }: any) {
-    items = [1,2,3,4,5,6]
     const itemsPerPage = ipp;
     const totalPages = Math.ceil(items.length / itemsPerPage);
     const [currentPage, setCurrentPage] = useState(1);

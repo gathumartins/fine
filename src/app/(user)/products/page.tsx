@@ -64,6 +64,7 @@ const result = await fetch(
 const data = await result.json();
   const itemsPerPage = 6;
   const comp = "product";
+  const products = [1,2,3,4,5,6]
   const sortedCats = data.data.proCats.edges.sort(
     (a:any, b:any) => a.node.prosysId - b.node.prosysId
   );
@@ -74,7 +75,7 @@ const data = await result.json();
           <PagesHero data={data.data.page.minibanner.header} />
         </header>
       </section>
-      <ProCats ipp={itemsPerPage} comp={comp} sortedCats={sortedCats} />
+      <ProCats ipp={itemsPerPage} items={products} comp={comp} sortedCats={sortedCats} />
     </article>
   );
 }
