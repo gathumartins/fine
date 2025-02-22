@@ -33,7 +33,9 @@ const data = await result.json();
           <PagesHero data={data.data.page.minibanner.header} />
         </header>
       </section>
-      <MyPagination items={projects} ipp={itemsPerPage} comp={comp} />
+      <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
+        <MyPagination items={projects} ipp={itemsPerPage} comp={comp} />
+      </section>
     </article>
   );
 }

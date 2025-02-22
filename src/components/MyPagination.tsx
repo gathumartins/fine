@@ -17,7 +17,6 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
     );
   return (
     <>
-      <section className="pt-14 md:pt-20 lg:pt-28 px-[16px]">
         <div className="myCont min-h-[200px] grid grid-cols-1 sm:grid-cols-2 gap-8 lg:grid-cols-3">
           {comp == "service" &&
             currentItems.map((item: any, index: number) => <ServiceCard key={index}/>)}
@@ -28,7 +27,6 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
           {comp == "blog" &&
             currentItems.map((item: any, index: number) => <BlogCard key={index}/>)}
         </div>
-      </section>
       <footer className="my-5">
         <div className="myCont flex justify-center">
           {items.length > 6 && (
