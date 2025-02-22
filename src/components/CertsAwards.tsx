@@ -10,12 +10,12 @@ import {
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
-function CertsAwards() {
+function CertsAwards({headings}:any) {
   return (
     <section className="py-[60px] px-[16px] bg-ftone">
       <header className="myCont sub title mb-5 text-center">
-        <h2 className="leading-none !mb-0 !text-fprimary">Partnerships</h2>
-        <h3 className="leading-none !text-white">Standards & Certifications</h3>
+        <h2 className="leading-none !mb-0 !text-fprimary">{headings.title}</h2>
+        <h3 className="leading-none !text-white">{headings.subtitle}</h3>
       </header>
       <div className="myCont ">
         <Carousel opts={{ align: "start", loop: true }}>

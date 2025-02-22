@@ -7,7 +7,7 @@ import React from 'react'
 
 const page = async () => {
 const query = `{
-  page:page(id: "cG9zdDoxNg==", idType: ID) {
+  page: page(id: "cG9zdDoxNg==", idType: ID) {
     content
     minibanner {
       header {
@@ -15,6 +15,22 @@ const query = `{
         image {
           node {
             mediaItemUrl
+          }
+        }
+      }
+    }
+    aboutFields {
+      partners {
+        title
+        subtitle
+      }
+      statements {
+        title
+        subtitle
+        statement {
+          core {
+            title
+            body
           }
         }
       }
@@ -42,7 +58,7 @@ const result = await fetch(
     );
 const data = await result.json();
 const cl = 0;
-// console.log(data.data.page.content)
+console.log(data.data.page.aboutFields.partners)
   return (
     <article className="page">
       <section className="">
@@ -60,7 +76,7 @@ const cl = 0;
           <Stats stats={data.data.com.stats.stats.stat} />
         </div>
       </section>
-      <CertsAwards />
+      <CertsAwards headings={data.data.page.aboutFields.partners} />
       <CoreStatements />
     </article>
   );
