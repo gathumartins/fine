@@ -83,13 +83,14 @@ const HomeHero = ({hero}:any) => {
         </Button>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-5">
         {hero.map((_: any, index: number) => (
           <button
+          title={`Home slider ${index} image indicator`}
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-white" : "bg-ftone"
+            className={`w-4 h-4 rounded-full ${
+              currentIndex === index ? "bg-fprimary" : "bg-white"
             }`}
           ></button>
         ))}
