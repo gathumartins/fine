@@ -49,6 +49,7 @@ const Header = ({header, main}:any) => {
             height={header.whitelogo.node.mediaDetails.height}
             alt={`Finework Kenya Limited Logo || ${header.whitelogo.node.altText}`}
             className="w-[180px]"
+            priority
           />
         )}
         <MobileMenu header={header} main={main}/>

@@ -27,6 +27,7 @@ const Navbar = ({main, logo}:any) => {
               height={logo.node.mediaDetails.height}
               alt={`Finework Kenya Limited Logo || ${logo.node.altText}`}
               className="w-[200px]"
+              priority
             />
           </Link>
         )}
