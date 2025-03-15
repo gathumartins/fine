@@ -51,6 +51,23 @@ const query = `{
       }
     }
   }
+  certs:awards {
+    edges {
+      node {
+        id
+        title
+        featuredImage {
+          node {
+            mediaItemUrl
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
 
 }`;
 const result = await fetch(
@@ -59,7 +76,6 @@ const result = await fetch(
     );
 const data = await result.json();
 const cl = 0;
-console.log(data.data.page.aboutFields.statements)
   return (
     <article className="page">
       <section className="">
@@ -77,7 +93,10 @@ console.log(data.data.page.aboutFields.statements)
           <Stats stats={data.data.com.stats.stats.stat} />
         </div>
       </section>
-      <CertsAwards headings={data.data.page.aboutFields.partners} />
+      <CertsAwards
+        headings={data.data.page.aboutFields.partners}
+        certs={data.data.certs.edges}
+      />
       <CoreStatements states={data.data.page.aboutFields.statements} />
     </article>
   );
