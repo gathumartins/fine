@@ -1,5 +1,13 @@
+'use client'
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
+
+const slideInOut = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  exit: { opacity: 0, x: -50, transition: { duration: 0.2, ease: "easeIn" } },
+};
 
 function CoreStatements({states}:any) {
   const defaultTab = states.statement[0].core.shortname;
@@ -29,12 +37,18 @@ function CoreStatements({states}:any) {
             <div className="flex-grow">
               {states.statement.map((stat: any, index: number) => (
                 <TabsContent value={stat.core.shortname} key={index}>
-                  <div className="flex flex-col justify-center gap-5 place-items-center max-w-[800px] mx-auto py-10 text-center body">
+                  <motion.div
+                    variants={slideInOut}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    className="flex flex-col justify-center gap-5 place-items-center max-w-[800px] mx-auto py-10 text-center body"
+                  >
                     <div
                       className="myPro text-ftone [&_b]:text-fsecondary [&_strong]:text-fsecondary [&_li]:list-disc [&_li]:list-inside [&_ol]:list-decimal [&_ol]:list-inside [&_ol>li]:text-left [&_li]:mb-4 text-xl leading-7 body"
                       dangerouslySetInnerHTML={{ __html: stat.core.body }}
                     ></div>
-                  </div>
+                  </motion.div>
                 </TabsContent>
               ))}
             </div>
