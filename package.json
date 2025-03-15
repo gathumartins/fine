@@ -31,11 +31,13 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
+    "react-photo-album": "^3.0.2",
     "react-share": "^5.1.2",
     "scroll-carousel": "^1.2.7",
     "scroll-carousel-react": "^1.0.0",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yet-another-react-lightbox": "^3.21.8"
   },
   "devDependencies": {
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",

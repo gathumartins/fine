@@ -9,11 +9,18 @@ import {
 } from "@/components/ui/card";
 
 function ProductCard() {
+  const bg = "/images/service.webp";
   return (
     <Card className="group relative rounded-none">
-      <CardHeader className="min-h-[246px] bg-[url('/images/service.webp')] bg-cover bg-center bg-no-repeat relative rounded-none">
+      <CardHeader className="min-h-[246px] relative rounded-none overflow-hidden">
+        <div
+          className="absolute bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 min-h-[246px] w-full top-0 left-0"
+          style={{
+            backgroundImage: `url(${bg})`,
+          }}
+        ></div>
         <CardTitle className="sr-only">Card Title</CardTitle>
-        <CardDescription className="min-w-[70px] rounded-none text-white group-hover:text-fsecondary bg-fsecondary group-hover:bg-fprimary transition-all duration-300 px-3 py-2 flex justify-center place-items-center text-base font-medium text-center absolute top-4 right-4">
+        <CardDescription className="min-w-[70px] rounded-none text-white group-hover:text-fsecondary bg-fsecondary group-hover:bg-fprimary transition-all duration-500 px-3 py-2 flex justify-center place-items-center text-base font-medium text-center absolute top-4 right-4">
           -10%
         </CardDescription>
       </CardHeader>
