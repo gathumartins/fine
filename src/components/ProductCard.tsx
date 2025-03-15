@@ -10,6 +10,8 @@ import {
 
 function ProductCard() {
   const bg = "/images/service.webp";
+  const price = 6000;
+  const discount = 10;
   return (
     <Card className="group relative rounded-none">
       <CardHeader className="min-h-[246px] relative rounded-none overflow-hidden">
@@ -21,7 +23,7 @@ function ProductCard() {
         ></div>
         <CardTitle className="sr-only">Card Title</CardTitle>
         <CardDescription className="min-w-[70px] rounded-none text-white group-hover:text-fsecondary bg-fsecondary group-hover:bg-fprimary transition-all duration-500 px-3 py-2 flex justify-center place-items-center text-base font-medium text-center absolute top-4 right-4">
-          -10%
+          -{discount}%
         </CardDescription>
       </CardHeader>
       <CardContent className="body pb-0 pt-4 [&_h3]:text-2xl [&_h3]:font-bold mb-3 [&_h3]:mb-3">
@@ -39,8 +41,8 @@ function ProductCard() {
         </ul>
       </CardContent>
       <CardFooter className="[&_h5]:text-fsecondary [&_h5]:font-semibold [&_h6]:text-ftone flex flex-col gap-0 items-start">
-        <h5 className="basis-1 text-lg">KSH 4000</h5>
-        <h6 className="basis-1 text-base line-through">KSH 6000</h6>
+        <h5 className="basis-1 text-lg">KSH {price-(price*discount/100)}</h5>
+        <h6 className="basis-1 text-base line-through">KSH {price}</h6>
       </CardFooter>
     </Card>
   );
