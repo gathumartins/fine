@@ -35,7 +35,7 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
               total={totalPages}
               initialPage={1}
               page={currentPage}
-              onChange={(page) => setCurrentPage(page)}
+              onChange={(page) => {setCurrentPage(page); window.scrollTo({ top: 0, behavior: "smooth" });}}
               className="gap-4  [&_li]:rounded-full"
               classNames={{
                 prev: "bg-fsecondary text-xl font-bold border-fprimary text-fprimary !hover:bg-fprimary hover:text-fsecondary",
