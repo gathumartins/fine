@@ -72,7 +72,7 @@ const data = await result.json();
           </div>
           <footer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
             {[1,2,3,4,5,6,7,8].map((pic:any, index:number) =>(
-              <Image src="/images/projthumb.webp" alt="Fine Work Kenya Project Image" width={440} height={360}/>
+              <Image src="/images/projthumb.webp" alt="Fine Work Kenya Project Image" width={440} height={360} key={index}/>
             ))}
           </footer>
         </div>
