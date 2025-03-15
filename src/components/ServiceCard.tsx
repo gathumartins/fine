@@ -32,7 +32,7 @@ return (
         <div className="w-[70px] h-[70px] bg-fsecondary group-hover:bg-fprimary transition-all duration-500 p-3 flex justify-center place-items-center absolute z-40 -top-20 left-5">
           <Image src={icon} alt={service.node.title} width={64} height={64} className='h-10 w-10' />
         </div>
-        <h3>{service.node.title}</h3>
+        <h3 className='capitalize'>{service.node.title}</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ex?
         </p>
