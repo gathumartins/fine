@@ -18,7 +18,7 @@ const Footer = ({footer, news, quick, clients}:any) => {
           <div className="myCont grid max-sm:grid-cols-2 max-lg:grid-cols-2 grid-cols-4 gap-4">
             <div className="pr-5 max-sm:pr-0 flex-grow max-sm:col-span-2">
               {/* <Image src="/images/logowhite.webp" width="180" height="41" alt="Finework Kenya Limited Logo Foooter" className="mb-6" /> */}
-              <h3 className="font-bold text-fshade mb-[20px] text-xl">
+              <h3 className="font-bold text-fprimary mb-[20px] text-xl">
                 Our Purpose
               </h3>
               <div
@@ -27,7 +27,7 @@ const Footer = ({footer, news, quick, clients}:any) => {
               ></div>
             </div>
             <div className="pr-[20px]">
-              <h3 className="font-bold text-fshade mb-[20px] text-xl">
+              <h3 className="font-bold text-fprimary mb-[20px] text-xl">
                 Quick Links
               </h3>
               <ul className="pl-0 text-xl font-medium leading-9">
@@ -46,7 +46,7 @@ const Footer = ({footer, news, quick, clients}:any) => {
               </ul>
             </div>
             <div className="pr-[20px]">
-              <h3 className="font-bold text-fshade mb-[20px] text-xl">
+              <h3 className="font-bold text-fprimary mb-[20px] text-xl">
                 Follow Us
               </h3>
               <ul className="leading-9 pl-0 font-medium text-xl">
@@ -66,7 +66,7 @@ const Footer = ({footer, news, quick, clients}:any) => {
               </ul>
             </div>
             <div className="pr-[20px] max-sm:pr-0 max-sm:col-span-2">
-              <h3 className="font-bold text-fshade mb-[20px] text-xl">
+              <h3 className="font-bold text-fprimary mb-[20px] text-xl">
                 Contact Us
               </h3>
               <div className="text-white">

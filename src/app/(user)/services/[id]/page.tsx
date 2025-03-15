@@ -24,6 +24,7 @@ const result = await fetch(
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
+console.log();
   return (
     <article className="page">
       <section className="">
