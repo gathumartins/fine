@@ -18,7 +18,7 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
     <>
         <div className="myCont min-h-[200px] grid grid-cols-1 sm:grid-cols-2 gap-8 lg:grid-cols-3">
           {comp == "service" &&
-            currentItems.map((item: any, index: number) => <ServiceCard key={index}/>)}
+            currentItems.map((item: any) => <ServiceCard key={item.node.id} service={item}/>)}
           {comp == "product" &&
             currentItems.map((item: any, index: number) => <ProductCard key={index}/>)}
           {comp == "project" &&
