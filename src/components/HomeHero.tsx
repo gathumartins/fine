@@ -51,9 +51,9 @@ const HomeHero = ({hero}:any) => {
                     <h1 className="text-[40px] max-lg:text-[35px] max-md:text-[30px] max-md:mb-[10px] mb-[15px]">
                       {image.title}
                     </h1>
-                    <h3 className="text-[60px] max-md:text-[40px] max-lg:text-[50px] max-md:mb-[20px] mb-[40px]">
+                    <h2 className="text-[60px] max-md:text-[40px] max-lg:text-[50px] max-md:mb-[20px] mb-[40px]">
                       {image.subtitle}
-                    </h3>
+                    </h2>
                     <Link
                       title={image.link.label}
                       href={image.link.path}
