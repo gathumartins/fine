@@ -9,7 +9,19 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { motion } from "framer-motion";
 
+const fadeInOut = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.2 } },
+};
+
+const slideInOut = {
+  initial: { opacity: 0, x: 50 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  exit: { opacity: 0, x: -50, transition: { duration: 0.2, ease: "easeIn" } },
+};
 
 function ProCats({ sortedCats, ipp, comp, items }: any) {
 const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
@@ -53,8 +65,15 @@ const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
               key={cat.node.id}
               className="p-0 mt-8"
             >
-              <h3>{cat.node.name}</h3>
-              <MyPagination items={items} ipp={ipp} comp={comp} />
+              <motion.div
+                variants={slideInOut}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+              >
+                <h3>{cat.node.name}</h3>
+                <MyPagination items={items} ipp={ipp} comp={comp} />
+              </motion.div>
             </TabsContent>
           ))}
         </Tabs>
