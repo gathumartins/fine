@@ -11,20 +11,18 @@ function Proposition({vprop}:any) {
       <div className="myCont flex flex-col gap-6 lg:flex-row-reverse justify-between">
         <div className="lg:w-1/2 w-full">
           <div className="relative w-full h-full min-h-[550px] max-w-[570px] mx-auto">
-            <Image
-              src="/images/imgone.webp"
-              alt="value proposition image"
-              width={338}
-              height={367}
-              className="top-0 left-0 absolute shadow-2xl z-10 max-[425px]:w-[90%] sm:max-w-3/4"
-            />
-            <Image
-              src="/images/imgtwo.webp"
-              alt="value proposition image"
-              width={301}
-              height={372}
-              className="bottom-0 right-0 absolute shadow-2xl z-0 max-[425px]:w-[90%]  sm:max-w-3/4"
-            />
+            {vprop.images !== null &&
+              vprop.images.length > 0 &&
+              vprop.images.map((img: any, index: number) => (
+                <Image
+                  key={index}
+                  src={img.image.node.mediaItemUrl}
+                  alt={`Value Proposition Image ${index + 1}`}
+                  width={img.image.node.mediaDetails.width}
+                  height={img.image.node.mediaDetails.height}
+                  className="absolute top-0 left-0 first:z-10 last:z-0 last:top-auto last:left-auto last:bottom-0 last:right-0 max-[425px]:w-[90%] sm:max-w-3/4 shadow-2xl rounded-lg"
+                />
+              ))}
           </div>
         </div>
         <div className="lg:w-1/2 w-full">
