@@ -1,12 +1,20 @@
 'use client'
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const slideInOut = {
+const slideInOut: Variants = {
   initial: { opacity: 0, x: 50 },
-  animate: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "easeOut" } },
-  exit: { opacity: 0, x: -50, transition: { duration: 0.2, ease: "easeIn" } },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.3, type: "tween" as const },
+  },
+  exit: {
+    opacity: 0,
+    x: -50,
+    transition: { duration: 0.3, type: "tween" as const },
+  },
 };
 
 function CoreStatements({states}:any) {
