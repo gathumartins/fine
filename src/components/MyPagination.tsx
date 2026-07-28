@@ -22,7 +22,7 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
           {comp == "product" &&
             currentItems.map((item: any, index: number) => <ProductCard key={item.node.id} product={item}/>)}
           {comp == "project" &&
-            currentItems.map((item: any, index: number) => <ProjectCard key={index}/>)}
+            currentItems.map((item: any, index: number) => <ProjectCard key={index} project={item}/>)}
           {comp == "blog" &&
             currentItems.map((item: any, index: number) => <BlogCard key={index}/>)}
         </div>

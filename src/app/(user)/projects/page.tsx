@@ -16,16 +16,44 @@ const query = `{
       }
     }
   }
-
+projects:projects {
+    edges {
+      node {
+        id
+        slug
+        title
+        content
+        featuredImage {
+          node {
+            altText
+            mediaDetails {
+              height
+              width
+            }
+            mediaItemUrl
+          }
+        }
+        projectFields {
+          information {
+            title
+            fields {
+              key
+              value
+            }
+          }
+        }
+      }
+    }
+  }
 }`;
 const result = await fetch(
   `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
   { headers: { "Content-Type": "application/json" } }
 );
 const data = await result.json();
-  let projects = [1, 2, 3, 4, 5, 6, 7];
+  let projects = data.data.projects.edges;
   const itemsPerPage = 6;
-  const comp = "project";
+  const comp = "project"; // Log the projects data to the console
   return (
     <article className="page">
       <section className="">
