@@ -39,10 +39,7 @@ return (
           />
         </div>
         <h3 className="capitalize">{service.node.title}</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ex?
-        </p>
-        <p>{service.node.excerpt}</p>
+        <div className="line-clamp-2 my-2" dangerouslySetInnerHTML={{ __html: service.node.content }}></div>
       </CardContent>
       <CardFooter className="[&_button]:text-fsecondary [&_button]:text-xl [&_button]:font-bold px-0 pt-0">
         <Button className="group-hover:text-fprimary transition-all duration-500 bg-transparent bg-fprimary group-hover:bg-fsecondary rounded-none hover:bg-transparent text-xl py-3 px-4">

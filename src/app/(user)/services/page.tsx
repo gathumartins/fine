@@ -22,6 +22,7 @@ const query = `{
         id
         title
         slug
+        content
         serviceFields {
           serviceicon {
             node {
