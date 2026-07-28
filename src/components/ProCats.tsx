@@ -23,7 +23,7 @@ const slideInOut: Variants = {
   exit: { opacity: 0, x: -50, transition: { duration: 0.3, type: "tween" as const } },
 };
 
-function ProCats({ sortedCats, ipp, comp, items }: any) {
+function ProCats({ sortedCats, ipp, comp }: any) {
 const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
   return (
     <section className="pt-14 md:pt-20 px-[16px]">
@@ -72,7 +72,11 @@ const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
                 exit="exit"
               >
                 <h3>{cat.node.name}</h3>
-                <MyPagination items={items} ipp={ipp} comp={comp} />
+                <MyPagination
+                  items={cat.node.products.edges}
+                  ipp={ipp}
+                  comp={comp}
+                />
               </motion.div>
             </TabsContent>
           ))}
