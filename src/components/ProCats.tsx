@@ -71,7 +71,7 @@ const [selectedTab, setSelectedTab] = useState(sortedCats[0].node.slug);
                 animate="animate"
                 exit="exit"
               >
-                <h3>{cat.node.name}</h3>
+                <h3 className="text-2xl font-bold mb-4">{cat.node.name}</h3>
                 <MyPagination
                   items={cat.node.products.edges}
                   ipp={ipp}
