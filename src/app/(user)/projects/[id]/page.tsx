@@ -80,15 +80,22 @@ const projectInfo = project.node.projectFields?.information;
               <ProjectInfo fields={projectInfo} />
             </aside>
             <main className="lg:basis-2/3">
-              <div className="" dangerouslySetInnerHTML={{ __html: project?.node.content || "" }} />
+              <div
+                className="[&_h1]:text-2xl [&_h1]:font-bold [&_h1]:mb-3 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mb-3 [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:mb-3 [&_h4]:text-2xl [&_h4]:font-bold [&_h4]:mb-3 [&_h5]:text-2xl [&_h5]:font-bold [&_h5]:mb-3 [&_h6]:text-2xl [&_h6]:font-bold [&_h6]:mb-3 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5"
+                dangerouslySetInnerHTML={{
+                  __html: project?.node.content || "",
+                }}
+              />
             </main>
           </div>
           {otherProjects.length > 0 && (
-            <footer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
+            <footer>
               <h3 className="text-3xl font-bold">Other Projects</h3>
-              {otherProjects.slice(0, 4).map((p: any) => (
-                <ProjectCard key={p.node.id} project={p} />
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+                {otherProjects.slice(0, 3).map((p: any) => (
+                  <ProjectCard key={p.node.id} project={p} />
+                ))}
+              </div>
             </footer>
           )}
         </div>
