@@ -8,17 +8,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-function ProductCard() {
+function ProductCard({ product }: { product: any }) {
   const bg = "/images/service.webp";
   const price = 6000;
   const discount = 10;
+  const bgImage = product.node.featuredImage?.node?.mediaItemUrl || bg;
+  console.log(product.node.productFields.variations, "product"); // Debugging line to check the value of bgImage
   return (
     <Card className="group relative rounded-none">
       <CardHeader className="min-h-[246px] relative rounded-none overflow-hidden">
         <div
           className="absolute bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110 min-h-[246px] w-full top-0 left-0"
           style={{
-            backgroundImage: `url(${bg})`,
+            backgroundImage: `url(${bgImage})`,
           }}
         ></div>
         <CardTitle className="sr-only">Card Title</CardTitle>
@@ -27,18 +29,22 @@ function ProductCard() {
         </CardDescription> */}
       </CardHeader>
       <CardContent className="body pb-0 pt-4 [&_h3]:text-2xl [&_h3]:font-bold mb-3 [&_h3]:mb-3">
-        <h3>Product Title</h3>
-        <ul className="[&_li]:pb-2 [&_li]:mb-3 [&_li]:border-1 border-ftint [&_li]:text-center [&_li]:px-3 [&_li]:py-2  flex flex-row flex-wrap gap-3">
-          <li className="text-sm text-fsecondary bg-transparent hover:bg-fprimary transition-all duration-300">
-            Small
-          </li>
-          <li className="text-sm text-fsecondary bg-transparent hover:bg-fprimary transition-all duration-300">
-            Large
-          </li>
-          <li className="text-sm text-fsecondary bg-transparent hover:bg-fprimary transition-all duration-300">
-            Extra Large
-          </li>
-        </ul>
+        <h3>{product.node.title}</h3>
+        {product.node.productFields.variations?.length > 0 && (
+          <ul className="[_&_li]:pb-2 [&_li]:mb-3 [&_li]:border-1 border-ftint [&_li]:text-center [&_li]:px-3 [&_li]:py-2  flex flex-row flex-wrap gap-3 items-center">
+            <span className='font-bold'>Available In: </span>
+            {product.node.productFields.variations.map(
+              (variation: any, index: number) => (
+                <li
+                  key={index}
+                  className="text-sm text-fsecondary bg-transparent hover:bg-fprimary transition-all duration-300 min-w-[50px]"
+                >
+                  {variation.variation.label}
+                </li>
+              ),
+            )}
+          </ul>
+        )}
       </CardContent>
       {/* <CardFooter className="[&_h5]:text-fsecondary [&_h5]:font-semibold [&_h6]:text-ftone flex flex-col gap-0 items-start">
         <h5 className="basis-1 text-lg">KSH {price-(price*discount/100)}</h5>
