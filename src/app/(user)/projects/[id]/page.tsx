@@ -2,6 +2,7 @@ import PagesHero from '@/components/PagesHero';
 import React from 'react'
 import Image from 'next/image';
 import ProjectInfo from '@/components/ProjectInfo';
+import ProjectCard from '@/components/ProjectCard';
 
 async function page({ params }: { params: Promise<{ id: string }> }) {
 const query = `{
@@ -82,11 +83,14 @@ const projectInfo = project.node.projectFields?.information;
               <div className="" dangerouslySetInnerHTML={{ __html: project?.node.content || "" }} />
             </main>
           </div>
-          <footer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
-            {[1,2,3,4,5,6,7,8].map((pic:any, index:number) =>(
-              <Image src="/images/projthumb.webp" alt="Fine Work Kenya Project Image" width={440} height={360} key={index}/>
-            ))}
-          </footer>
+          {otherProjects.length > 0 && (
+            <footer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5">
+              <h3 className="text-3xl font-bold">Other Projects</h3>
+              {otherProjects.slice(0, 4).map((p: any) => (
+                <ProjectCard key={p.node.id} project={p} />
+              ))}
+            </footer>
+          )}
         </div>
       </section>
     </article>
