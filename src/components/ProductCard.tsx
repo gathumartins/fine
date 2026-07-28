@@ -13,7 +13,6 @@ function ProductCard({ product }: { product: any }) {
   const price = 6000;
   const discount = 10;
   const bgImage = product.node.featuredImage?.node?.mediaItemUrl || bg;
-  console.log(product.node.productFields.variations, "product"); // Debugging line to check the value of bgImage
   return (
     <Card className="group relative rounded-none">
       <CardHeader className="min-h-[246px] relative rounded-none overflow-hidden">
