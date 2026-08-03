@@ -30,7 +30,7 @@ function MyPagination({ items, ipp, comp, cTitle }: any) {
         <div className="myCont flex justify-center">
           {items.length > 6 && (
             <Pagination
-              loop
+            loop
               showControls
               total={totalPages}
               initialPage={1}
