@@ -26,10 +26,10 @@
     "framer-motion": "^12.0.5",
     "heroicons": "^2.2.0",
     "lucide-react": "^0.473.0",
-    "next": "^9.3.3",
-    "react": "^19.0.0",
+    "next": "^15.5.22",
+    "react": "^19.2.8",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.2.8",
     "react-icons": "^5.4.0",
     "react-photo-album": "^3.0.2",
     "react-share": "^5.1.2",
@@ -53,5 +53,6 @@
     "fsevents@2.3.3": true,
     "sharp@0.34.5": true,
     "unrs-resolver@1.12.2": true
-  }
+  },
+  "type": "module"
 }
