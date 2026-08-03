@@ -7,7 +7,7 @@ import Image from "next/image";
 import { FaTags } from "react-icons/fa6";
 
 
-async function page() {
+async function page({ params }: { params: Promise<{ id: string }> }) {
   const query = `{
   page:page(id: "cG9zdDoyNA==", idType: ID) {
     minibanner {
@@ -27,7 +27,11 @@ async function page() {
     `${process.env.WORDPRESS_API_URL}?query=${encodeURIComponent(query)}`,
     { headers: { "Content-Type": "application/json" } }
   );
+  const resolvedParams = await params;
+  const slug = resolvedParams.id;
   const data = await result.json();
+
+
   return (
     <article className="page">
       <section className="">
