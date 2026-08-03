@@ -26,8 +26,8 @@ function BlogCard() {
             deleniti. Placeat?
           </p>
         </CardContent>
-        <CardFooter className="[&_button]:underline [&_button]:text-fsecondary [&_button]:text-xl [&_button]:font-bold px-0 pt-0">
-          <Button className="group-hover:text-fprimary transition-all duration-400 bg-transparent rounded-none hover:bg-transparent text-xl p-0">
+        <CardFooter className="[&_button]:hover:bg-fsecondary transition-all duration-400 ease-in [&_button]:bg-fprimary [&_button]:px-4 [&_button]:text-fsecondary [&_button]:text-xl [&_button]:font-bold px-0 pt-0">
+          <Button className="group-hover:text-fprimary transition-all duration-400 ease-in bg-transparent rounded-none hover:bg-transparent text-xl p-0">
             See More
           </Button>
         </CardFooter>
